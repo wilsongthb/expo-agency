@@ -48,15 +48,14 @@
       <q-toolbar class="justify-center">  
         <q-tabs
           indicator-color="blue-9"
-          switch-indicator
-          
-          class=""
+          switch-indicator 
         >
           <q-route-tab
             v-for="item in links1"
             :key="item.text"
             :name="item.icon" 
             :icon="item.icon"
+            :label="item.text"
             :to="item.url"
             exact
           />

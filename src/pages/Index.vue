@@ -1,16 +1,70 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
-    
+  <q-page>
+  <div class="q-gutter-sm column" style="height: 220px">
+    <q-banner class="col bg-info">
+      <div class="text-h6 text-weight-bolder text-center text-white">
+        You will travel by?
+      </div>
+    </q-banner>
+  </div>
+  <div class="superponer q-mx-sm">
+    <div class="row">
+      <div class="col q-mr-sm">
+        <q-card class="my-card">
+          <q-card-section>
+            <img
+              alt="Quasar logo"
+              src="~assets/3.png"
+              style="width: 150px; height: 150px"
+            >
+          </q-card-section>
+        </q-card>
+      </div>
+      <div class="col">
+        <q-card class="my-card">
+          <q-card-section>
+            <img
+              alt="Quasar logo"
+              src="~assets/train.png"
+              style="width: 150px; height: 150px"
+          >
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
+    <div class="row q-mt-sm">
+      <div class="col justify-center">
+        <q-card class="my-card">
+          <q-card-section class="row justify-center">
+            <img
+              alt="Quasar logo"
+              src="~assets/1.png"
+              
+              style="width: 150px; height: 150px"
+          >
+          </q-card-section>
+        </q-card>
+      </div>
+    </div>
+  </div>
+
   </q-page>
 </template>
 
 <script>
 export default {
-  name: 'PageIndex'
+  name: 'PageIndex',
+  data(){
+    return{
+      lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.'
+    }
+  }
 }
 </script>
+<style scoped>
+  .superponer{
+    position: absolute;
+    top: 170px;
+    
+  }
+</style>
