@@ -12,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Travel Trip
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>Demo v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -40,9 +40,30 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="bg-grey-2">
       <router-view />
     </q-page-container>
+
+    <q-footer  class="bg-white text-primary">
+      <q-toolbar class="justify-center">  
+        <q-tabs
+          indicator-color="blue-9"
+          switch-indicator
+          
+          class=""
+        >
+          <q-route-tab
+            v-for="item in links1"
+            :key="item.text"
+            :name="item.icon" 
+            :icon="item.icon"
+            :to="item.url"
+            exact
+          />
+        </q-tabs>
+      </q-toolbar>
+    </q-footer>
+
   </q-layout>
 </template>
 
@@ -100,7 +121,13 @@ export default {
   data () {
     return {
       leftDrawerOpen: false,
-      essentialLinks: linksData
+      essentialLinks: linksData,
+      links1: [
+        { icon: 'home', text: 'Home', url:"home"  },
+        { icon: 'luggage', text: 'Tours', url:"#" },
+        { icon: 'search', text: 'Explore', url:"#" },
+        { icon: 'account_box', text: 'Profile', url:"#" }
+      ]
     }
   }
 }
