@@ -125,7 +125,7 @@ export default {
       links1: [
         { icon: 'home', text: 'Home', url:"home"  },
         { icon: 'luggage', text: 'Tours', url:"#" },
-        { icon: 'search', text: 'Explore', url:"#" },
+        { icon: 'search', text: 'Explore', url:"travels" },
         { icon: 'account_box', text: 'Profile', url:"#" }
       ]
     }

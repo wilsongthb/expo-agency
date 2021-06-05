@@ -2,9 +2,9 @@
 <!-- Email: wilsonaux1@gmail.com -->
 <!-- Created at: 2021-06-05 14:17 -->
 <template>
-  <div>
+  <q-page>
     <div class="q-pa-md row items-start q-gutter-md">
-      <div class="col-3">
+      <div class="col">
         <q-input
           color="grey-3"
           label-color="orange"
@@ -26,7 +26,7 @@
         :travel="l"
       ></TravelCard>
     </div>
-  </div>
+  </q-page>
 </template>
 <script>
 import TravelCard from "./TravelCard.vue";
