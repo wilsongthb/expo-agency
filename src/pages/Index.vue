@@ -12,36 +12,53 @@
       <div class="col q-mr-sm">
         <q-card class="my-card">
           <q-card-section>
-            <img
+            <q-item to="/planes">
+              <q-img
               alt="Quasar logo"
-              src="~assets/3.png"
-              style="width: 150px; height: 150px"
-            >
+              src="~assets/3.png"              
+              ></q-img>
+            </q-item>            
           </q-card-section>
         </q-card>
       </div>
       <div class="col">
         <q-card class="my-card">
           <q-card-section>
-            <img
+            <q-item to="/planes">
+              <q-img
               alt="Quasar logo"
               src="~assets/train.png"
-              style="width: 150px; height: 150px"
-          >
+              >
+              </q-img>
+            </q-item>
           </q-card-section>
         </q-card>
       </div>
     </div>
-    <div class="row q-mt-sm">
-      <div class="col justify-center">
+    <div class="row q-mt-sm q-gutter-sm">
+      <div class="col">
         <q-card class="my-card">
-          <q-card-section class="row justify-center">
-            <img
+          <q-card-section>
+            <q-item to="/planes">
+              <q-img
               alt="Quasar logo"
               src="~assets/1.png"
-              
-              style="width: 150px; height: 150px"
-          >
+              >
+              </q-img>
+            </q-item>            
+          </q-card-section>
+        </q-card>
+      </div>
+      <div class="col">
+        <q-card class="my-card">
+          <q-card-section>
+            <q-item to="/planes">
+              <q-img
+              alt="Quasar logo"
+              src="~assets/aeroplane.png"
+              >
+              </q-img>
+            </q-item>            
           </q-card-section>
         </q-card>
       </div>
@@ -63,8 +80,8 @@ export default {
 </script>
 <style scoped>
   .superponer{
-    position: absolute;
-    top: 170px;
+    position: relative;
+    top: -50px;
     
   }
 </style>
