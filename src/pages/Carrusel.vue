@@ -1,5 +1,5 @@
 <template>
-  <div class="fullscreen text-center  flex flex-center">
+  <div class="fullscreen text-center  flex flex-center ">
     <q-carousel
       v-model="slide"
       swipeable
@@ -80,6 +80,6 @@ export default {
   }
 }
 </script>
-<style lang="">
-    
+<style scoped>
+
 </style>
