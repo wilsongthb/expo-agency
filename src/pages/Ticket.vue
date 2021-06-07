@@ -36,7 +36,43 @@
         <q-tab-panels v-model="tab" animated>
           <q-tab-panel name="round">
             <div class="text-h6">Round</div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <div class="row ">
+              <div class="col q-mr-sm">
+                <q-input color="primary" v-model="text" label="From" size="10px" font-size="10px">
+                  <template v-slot:prepend>
+                    <q-icon name="place" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Departure date">
+                  <template v-slot:prepend>
+                    <q-icon name="event" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Number of passenger">
+                  <template v-slot:prepend>
+                    <q-icon name="person" />
+                  </template>
+                </q-input>
+              </div>
+              <div class="col q-ml-sm">
+                <q-input color="primary" v-model="text" label="To">
+                  <template v-slot:prepend>
+                    <q-icon name="place" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Return date">
+                  <template v-slot:prepend>
+                    <q-icon name="event" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Flight class">
+                  <template v-slot:prepend>
+                    <q-icon name="flight_class" />
+                  </template>
+                </q-input>
+              </div>
+            </div>
+            
           </q-tab-panel>
 
           <q-tab-panel name="one_way">
@@ -52,6 +88,20 @@
       </q-card>
     </div>
   </div>
+  <q-expansion-item
+        expand-separator
+        icon="info"
+        label="More details"
+        header-class="text-primary"
+      >
+        <q-card>
+          <q-card-section>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti
+            commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste
+            eveniet doloribus ullam aliquid.
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
   <div class="row justify-center">
     <q-btn 
     size="lg"
@@ -71,7 +121,8 @@ export default {
   data(){
     return{
       lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.',
-      tab: 'round'
+      tab: 'round',
+      text: ''
     }
   }
 }

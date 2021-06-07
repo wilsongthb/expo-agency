@@ -14,10 +14,11 @@
           <q-card-section>
             <q-item to="/planes">
               <q-img
-              alt="Quasar logo"
+              alt=""
               src="~assets/3.png"              
               ></q-img>
-            </q-item>            
+            </q-item>
+            <div class="text-h6 text-center">Car</div>            
           </q-card-section>
         </q-card>
       </div>
@@ -26,11 +27,12 @@
           <q-card-section>
             <q-item to="/planes">
               <q-img
-              alt="Quasar logo"
+              alt=""
               src="~assets/train.png"
               >
               </q-img>
             </q-item>
+            <div class="text-h6 text-center">Train</div>
           </q-card-section>
         </q-card>
       </div>
@@ -41,11 +43,12 @@
           <q-card-section>
             <q-item to="/planes">
               <q-img
-              alt="Quasar logo"
+              alt=""
               src="~assets/1.png"
               >
               </q-img>
-            </q-item>            
+            </q-item>
+            <div class="text-h6 text-center">Boat</div>            
           </q-card-section>
         </q-card>
       </div>
@@ -54,11 +57,12 @@
           <q-card-section>
             <q-item to="/planes">
               <q-img
-              alt="Quasar logo"
+              alt=""
               src="~assets/aeroplane.png"
               >
               </q-img>
-            </q-item>            
+            </q-item>
+            <div class="text-h6 text-center">Plane</div>            
           </q-card-section>
         </q-card>
       </div>
