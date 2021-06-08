@@ -8,6 +8,7 @@ const routes = [
       { path: "/planes", component: () => import("pages/Planes.vue") },
       { path: "/ticket", component: () => import("pages/Ticket.vue") },
       { path: "/result", component: () => import("pages/Result.vue") },
+      { path: "/tours", component: () => import("pages/Tours.vue") },
       {
         path: "/travels",
         component: () => import("src/travels/IndexPage.vue"),
@@ -25,6 +26,18 @@ const routes = [
   {
     path: '/',
     component: () => import('pages/Carrusel.vue')
+  },
+  {
+    path: '/auth',
+    component: () => import('pages/Auth.vue'),
+  },
+  {
+    path: '/register',
+    component: () => import('pages/Register.vue'),
+  },
+  {
+    path: '/login',
+    component: () => import('pages/Login.vue'),
   }
 ]
 

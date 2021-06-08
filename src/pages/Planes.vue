@@ -6,7 +6,7 @@
         <div class="q-mb-sm">
           Your travel price: S/. 700.00
         </div>
-        <q-btn label="I Can Book" color="secondary" rounded no-caps/>
+        <q-btn label="I Can Book" color="secondary" rounded no-caps to="/ticket"/>
       </div>
     </q-banner>
   </div>
@@ -20,7 +20,7 @@
                 Min Price:
                 <span class=" text-weight-bolder text-black">400 PE</span>
               </div>
-              <q-btn label="I Can Book" color="info" rounded no-caps/>
+              <q-btn label="I Can Book" color="info" rounded no-caps to="/ticket"/>
             </div>
           </q-card-section>
         </q-card>
@@ -33,7 +33,7 @@
                 Average Price:
                 <span class=" text-weight-bolder text-black">600 PE</span>
               </div>
-              <q-btn label="I Can Book" color="info" rounded no-caps/>
+              <q-btn label="I Can Book" color="info" rounded no-caps to="/ticket"/>
             </div>
           </q-card-section>
         </q-card>
@@ -48,7 +48,7 @@
                 Maximum Price:
                 <span class=" text-weight-bolder text-black">800 PE</span>
               </div>
-              <q-btn label="I Can Book" color="info" rounded no-caps/>
+              <q-btn label="I Can Book" color="info" rounded no-caps to="/ticket"/>
             </div>
           </q-card-section>
         </q-card>
@@ -61,7 +61,7 @@
     color="info"
     label="Find Now"
     rounded
-    no-caps
+    no-caps to="/ticket"
     class="q-px-xl"
   />
   </div>  

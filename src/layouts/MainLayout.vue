@@ -123,9 +123,9 @@ export default {
       essentialLinks: linksData,
       links1: [
         { icon: 'home', text: 'Home', url:"home"  },
-        { icon: 'luggage', text: 'Tours', url:"#" },
+        { icon: 'luggage', text: 'Tours', url:"tours" },
         { icon: 'search', text: 'Explore', url:"travels" },
-        { icon: 'account_box', text: 'Profile', url:"#" }
+        { icon: 'account_box', text: 'Profile', url:"auth" }
       ]
     }
   }
