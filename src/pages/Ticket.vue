@@ -134,6 +134,7 @@
                     <q-icon name="person" />
                   </template>
                 </q-input>
+
               </div>
               <div class="col q-ml-sm">
                 <q-input color="primary" v-model="text" label="To">
