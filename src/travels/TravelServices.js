@@ -66,24 +66,36 @@ There will visit the famous archaeological complex of Sillustani, cylinder buria
       },
       {
         ...baseTravel,
-        imageSrc: "https://www.toursapuno.com/wp-content/uploads/2019/12/aramu-muru-hayu-marca-chucuito-inca-uyu-slider-17-600x293.jpg",
+        imageSrc:
+          "https://www.toursapuno.com/wp-content/uploads/2019/12/aramu-muru-hayu-marca-chucuito-inca-uyu-slider-17-600x293.jpg",
         name: "Private tour to Inca uyo – Chucuito",
       },
       {
         ...baseTravel,
-        imageSrc: "https://www.toursapuno.com/wp-content/uploads/2019/12/aramu-muru-hayu-marca-chucuito-inca-uyu-slider-14-600x293.jpg",
+        imageSrc:
+          "https://www.toursapuno.com/wp-content/uploads/2019/12/aramu-muru-hayu-marca-chucuito-inca-uyu-slider-14-600x293.jpg",
         name: "Private tour to chullpas of Cutimbo – Puno",
       },
       {
         ...baseTravel,
-        imageSrc: "https://www.toursapuno.com/wp-content/uploads/2019/12/chullpas-cutimbo-puno-privado-slider-01-600x293.jpg",
+        imageSrc:
+          "https://www.toursapuno.com/wp-content/uploads/2019/12/chullpas-cutimbo-puno-privado-slider-01-600x293.jpg",
         name: "Private tour to Chucuito, Aramu muru and Juli",
       },
     ];
   }
 
   static async getTravel(id) {
-    return (await http.get(`api/travels/${id}`)).data;
+    let result = await TravelServices.getTravels();
+    try {
+      let part = result.filter((x) => (x.id = id))[0];
+      return part;
+    } catch (e) {
+      return {};
+    } finally {
+      //
+    }
+    // return (await http.get(`api/travels/${id}`)).data;
   }
 
   static async saveTravel(reg) {

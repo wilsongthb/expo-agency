@@ -19,12 +19,13 @@
       </div>
     </div>
     <div class="q-pa-md row items-start q-gutter-md">
-      <TravelCard
-        class="col-3"
+      <router-link
+        :to="`/travels/${l.id}`"
         v-for="(l, i) in filteredList"
         :key="i"
-        :travel="l"
-      ></TravelCard>
+      >
+        <TravelCard class="col-11" :travel="l"></TravelCard>
+      </router-link>
     </div>
   </q-page>
 </template>
