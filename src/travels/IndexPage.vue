@@ -20,7 +20,7 @@
     </div>
     <div class="q-pa-md row justify-center ">
       <TravelCard
-        class="col-5 q-mx-lg q-mb-lg"
+        class="col-md-5 q-mx-lg q-mb-lg"
         v-for="(l, i) in filteredList"
         :key="i"
         :travel="l"

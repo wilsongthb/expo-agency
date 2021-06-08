@@ -13,7 +13,11 @@ const routes = [
         path: "/travels",
         component: () => import("src/travels/IndexPage.vue"),
       },
-      
+      {
+        path: "/travels/:id",
+        component: () => import("src/travels/ShowPage.vue"),
+        props: true
+      }
     ],
   },
 
