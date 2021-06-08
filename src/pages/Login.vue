@@ -56,9 +56,12 @@
       </div>
     </div>
     
-    <div class="text-h11 q-mt-md text-center text-grey-6">
-        Don't have an account?
-        <span class="text-weight-bolder text-grey-6" ><a href="/#/register">Create Now</a></span>
+    <div class="row text-h11 text-center q-mt-md text-grey-6">
+        <div class="col">
+          Don't have an account?
+          <q-item class="col text-weight-bolder text-grey-6" to="/register" style=display:inline;>Create Now</q-item>
+        </div>
+        
     </div>
   </div>
   
