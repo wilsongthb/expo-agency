@@ -18,9 +18,9 @@
         </q-input>
       </div>
     </div>
-    <div class="q-pa-md row items-start q-gutter-md">
+    <div class="q-pa-md row justify-center ">
       <TravelCard
-        class="col-3"
+        class="col-5 q-mx-lg q-mb-lg"
         v-for="(l, i) in filteredList"
         :key="i"
         :travel="l"
