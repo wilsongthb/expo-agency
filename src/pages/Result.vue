@@ -4,9 +4,9 @@
     <q-banner class="col bg-info">
       <div class="text-h6 text-weight-bolder text-center text-white">
         <div class="q-mb-sm">
-          Your travel price: S/. 700.00
+          Result flight
         </div>
-        <q-btn label="I Can Book" color="secondary" rounded no-caps/>
+        
       </div>
     </q-banner>
   </div>
@@ -128,7 +128,7 @@
     </q-card>
 
   </div>
-  <div class="row justify-center">
+  <!-- <div class="row justify-center">
     <q-btn 
     size="lg"
     color="info"
@@ -137,7 +137,7 @@
     no-caps
     class="q-px-xl"
   />
-  </div>  
+  </div>   -->
   </q-page>
 </template>
 

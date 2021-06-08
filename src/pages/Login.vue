@@ -43,6 +43,7 @@
   </div>
   <div class="superponer_boton">
     <div class="row justify-center">
+      <div class="col q-mx-xl">
         <q-btn 
         to="home"
         size="lg"
@@ -50,11 +51,12 @@
         label="Sign In"
         rounded
         no-caps
-        class="q-px-xl"
+        class="full-width"
         />
+      </div>
     </div>
     
-    <div class="text-h11 q-mt-md text-center text-grey-4">
+    <div class="text-h11 q-mt-md text-center text-grey-6">
         Don't have an account?
         <span class="text-weight-bolder text-grey-6" ><a href="/#/register">Create Now</a></span>
     </div>

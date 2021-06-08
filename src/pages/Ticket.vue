@@ -77,12 +77,82 @@
 
           <q-tab-panel name="one_way">
             <div class="text-h6">One way</div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <div class="row ">
+              <div class="col q-mr-sm">
+                <q-input color="primary" v-model="text" label="From" size="10px" font-size="10px">
+                  <template v-slot:prepend>
+                    <q-icon name="place" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Departure date">
+                  <template v-slot:prepend>
+                    <q-icon name="event" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Number of passenger">
+                  <template v-slot:prepend>
+                    <q-icon name="person" />
+                  </template>
+                </q-input>
+              </div>
+              <div class="col q-ml-sm">
+                <q-input color="primary" v-model="text" label="To">
+                  <template v-slot:prepend>
+                    <q-icon name="place" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Return date">
+                  <template v-slot:prepend>
+                    <q-icon name="event" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Flight class">
+                  <template v-slot:prepend>
+                    <q-icon name="flight_class" />
+                  </template>
+                </q-input>
+              </div>
+            </div>
           </q-tab-panel>
 
           <q-tab-panel name="multi">
             <div class="text-h6">Multi</div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <div class="row ">
+              <div class="col q-mr-sm">
+                <q-input color="primary" v-model="text" label="From" size="10px" font-size="10px">
+                  <template v-slot:prepend>
+                    <q-icon name="place" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Departure date">
+                  <template v-slot:prepend>
+                    <q-icon name="event" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Number of passenger">
+                  <template v-slot:prepend>
+                    <q-icon name="person" />
+                  </template>
+                </q-input>
+              </div>
+              <div class="col q-ml-sm">
+                <q-input color="primary" v-model="text" label="To">
+                  <template v-slot:prepend>
+                    <q-icon name="place" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Return date">
+                  <template v-slot:prepend>
+                    <q-icon name="event" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Flight class">
+                  <template v-slot:prepend>
+                    <q-icon name="flight_class" />
+                  </template>
+                </q-input>
+              </div>
+            </div>
           </q-tab-panel>
         </q-tab-panels>
       </q-card>
@@ -110,6 +180,7 @@
     rounded
     no-caps
     class="q-px-xl"
+    to="result"
   />
   </div>  
   </q-page>
