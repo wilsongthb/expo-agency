@@ -88,7 +88,7 @@
     </div>
     <div class="text-h11 q-mt-md text-center text-grey-6">
         Already have an account? 
-        <span class="text-weight-bolder text-grey-6" ><a href="/">Sign In </a></span>
+        <q-item class="col text-weight-bolder text-grey-6" to="/login" style=display:inline;>Sign in</q-item>
     </div>
   </div>
   
