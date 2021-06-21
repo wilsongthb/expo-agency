@@ -6,8 +6,8 @@
         <div class="q-mb-sm">
             <img
                 alt="Quasar logo"
-                src="~assets/logo.png"
-                class="q-mb-sm"
+                src="~assets/logo-vertical.png"
+                style="width: 200px; height: 200px"
             />
           
         </div>
@@ -25,12 +25,12 @@
         <q-card class="my-card">
           <q-card-section>
             <div class="text-center ">
-                <q-input color="primary" class="q-mt-sm" v-model="text" label="E-mail">
+                <q-input color="primary" class="q-mt-sm" v-model="email" label="E-mail" :rules="[val => !!val || 'Field is required']">
                     <template v-slot:append>
                     <q-icon name="email" />
                     </template>
                 </q-input>
-                <q-input color="primary" class="q-mt-sm q-mb-xl" v-model="text" label="Password">
+                <q-input color="primary" class="q-mt-sm q-mb-xl" v-model="password" label="Password" :rules="[val => !!val || 'Field is required']">
                     <template v-slot:append>
                     <q-icon name="visibility" />
                     </template>
@@ -73,10 +73,22 @@ export default {
   name: 'PageIndex',
   data(){
     return{
-      text:"",
-
+      login:{email:"",password:""}
     }
-  }
+  },
+  methods: {
+    login(){
+      axios.post('/user', 
+        this.login
+      )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
+  },
 }
 </script>
 <style scoped>

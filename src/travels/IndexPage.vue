@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="q-pa-md row justify-center ">
-      <router-link class="col-md-6 col-sm-6"
+      <router-link class="col-12 col-md-6 col-sm-6"
         :to="`/travels/${l.id}`"
         v-for="(l, i) in filteredList"
         :key="i"
