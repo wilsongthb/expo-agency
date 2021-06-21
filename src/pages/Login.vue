@@ -23,16 +23,17 @@
     <div class="row q-mt-sm q-mx-sm">
       <div class="col">
         <q-card class="my-card">
+        
           <q-card-section>
             <div class="text-center ">
-                <q-input color="primary" class="q-mt-sm" v-model="email" label="E-mail" :rules="[val => !!val || 'Field is required']">
+                <q-input color="primary" class="q-mt-sm" v-model="login.email" type="email" label="E-mail" :rules="[val => !!val || 'Field is required']">
                     <template v-slot:append>
                     <q-icon name="email" />
                     </template>
                 </q-input>
-                <q-input color="primary" class="q-mt-sm q-mb-xl" v-model="password" label="Password" :rules="[val => !!val || 'Field is required']">
+                <q-input color="primary" class="q-mt-sm q-mb-xl" v-model="login.password"  :type="isPwd ? 'password' : 'text'" label="Password" :rules="[val => !!val || 'Field is required', val => val.length > 6 || 'Please use miniun 6 character']">
                     <template v-slot:append>
-                    <q-icon name="visibility" />
+                    <q-icon name="visibility"   @click="isPwd = !isPwd"/>
                     </template>
                 </q-input>
             </div>
@@ -45,7 +46,7 @@
     <div class="row justify-center">
       <div class="col q-mx-xl">
         <q-btn 
-        to="home"
+        @click="auth()"
         size="lg"
         color="info"
         label="Sign In"
@@ -55,7 +56,7 @@
         />
       </div>
     </div>
-    
+
     <div class="row text-h11 text-center q-mt-md text-grey-6">
         <div class="col">
           Don't have an account?
@@ -69,15 +70,19 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: 'PageIndex',
   data(){
     return{
-      login:{email:"",password:""}
+      login:{email:"",password:""},
+      isPwd: true,
+      re: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     }
   },
   methods: {
-    login(){
+    auth(){
+      console.log("hola")
       axios.post('/user', 
         this.login
       )
