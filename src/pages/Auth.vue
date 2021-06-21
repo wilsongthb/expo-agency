@@ -1,15 +1,14 @@
 <template>
-  <div class="fullscreen text-center  flex flex-center ">
+  <div class="fullscreen text-center  flex flex-center bg-info">
     <div class="row justify-center">
       <div class="col q-mx-md">
         <img
         alt="Quasar logo"
-        src="~assets/quasar-logo-vertical.svg"
+        src="~assets/logo-vertical.png"
         style="width: 200px; height: 200px"
-        class="q-mb-xl"
       >
-      <q-btn color="info" rounded class="full-width q-mt-sm" label="Sign Up" to="/register"/>
-      <q-btn outline rounded color="info" size="md" class="full-width q-mt-md" label="Sign In" to="/login" />
+      <q-btn color="warning" rounded class="full-width q-mt-sm" label="Sign Up" to="/register"/>
+      <q-btn outline rounded color="yellow" size="md" class="full-width q-mt-md" label="Sign In" to="/login" />
       </div>
       
     </div>

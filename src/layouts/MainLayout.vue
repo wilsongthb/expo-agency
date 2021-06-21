@@ -2,7 +2,15 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated >
         <q-toolbar>
-          <q-toolbar-title>Travel trip</q-toolbar-title>
+          
+          <!-- <q-toolbar-title>Travel trip</q-toolbar-title> -->
+          <q-toolbar-title>
+            <q-img
+              alt="Quasar logo"
+              src="~assets/logo.png"
+              style="width: 200px;"
+            />
+          </q-toolbar-title>
           <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
         </q-toolbar>
       </q-header>
