@@ -25,17 +25,22 @@
         <q-card class="my-card">
           <q-card-section>
             <div class="text-center ">
-                <q-input color="primary" class="" v-model="text" label="Full Name">
+                <q-input color="primary" class="" v-model="name" label="Full Name">
                     <template v-slot:append>
                     <q-icon name="person" />
                     </template>
                 </q-input>
-                <q-input color="primary" class="q-mt-sm" v-model="text" label="E-mail">
+                <q-input color="primary" class="q-mt-sm" v-model="email" label="E-mail">
                     <template v-slot:append>
                     <q-icon name="email" />
                     </template>
                 </q-input>
-                <q-input color="primary" class="q-mt-sm q-mb-xl" v-model="text" label="Password">
+                <q-input color="primary" class="q-mt-sm" v-model="password" label="Password">
+                    <template v-slot:append>
+                    <q-icon name="visibility" />
+                    </template>
+                </q-input>
+                <q-input color="primary" class="q-mt-sm q-mb-xl" v-model="password2" label="Verify password">
                     <template v-slot:append>
                     <q-icon name="visibility" />
                     </template>
@@ -101,9 +106,22 @@ export default {
   data(){
     return{
       text:"",
-
+      register:{name:"",email:"",password:"",password2:""}
     }
-  }
+  },
+  methods: {
+    register(){
+      console.log("registrado")
+      axios.post('/register', 
+        this.register
+      )
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }}
 }
 </script>
 <style scoped>
