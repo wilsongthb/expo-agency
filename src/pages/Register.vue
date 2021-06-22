@@ -18,99 +18,103 @@
       </div>
     </q-banner>
   </div>
-  <div class="superponer q-mx-sm">
-   
-    <div class="row q-mt-sm q-mx-sm">
-      <div class="col">
-        <q-card class="my-card">
-          <q-card-section>
-            <div class="text-center ">
-                <q-input color="primary" class="" v-model="name" label="Full Name">
-                    <template v-slot:append>
-                    <q-icon name="person" />
-                    </template>
-                </q-input>
-                <q-input color="primary" class="q-mt-sm" v-model="email" label="E-mail">
-                    <template v-slot:append>
-                    <q-icon name="email" />
-                    </template>
-                </q-input>
-                <q-input color="primary" class="q-mt-sm" v-model="password" label="Password">
-                    <template v-slot:append>
-                    <q-icon name="visibility" />
-                    </template>
-                </q-input>
-                <q-input color="primary" class="q-mt-sm q-mb-xl" v-model="password2" label="Verify password">
-                    <template v-slot:append>
-                    <q-icon name="visibility" />
-                    </template>
-                </q-input>
-            </div>
-          </q-card-section>
-        </q-card>
+  <q-form @submit="registro">
+    <div class="superponer q-mx-sm">
+      <div class="row q-mt-sm q-mx-sm">
+        <div class="col">
+          <q-card class="my-card">
+            <q-card-section>
+              <div class="text-center ">
+                  <q-input color="primary" class="" v-model="register.name" type="text" label="Full Name" required>
+                      <template v-slot:append>
+                      <q-icon name="person" />
+                      </template>
+                  </q-input>
+                  <q-input color="primary" class="q-mt-sm" v-model="register.email" type="email" label="E-mail" required>
+                      <template v-slot:append>
+                      <q-icon name="email" />
+                      </template>
+                  </q-input>
+                  <q-input color="primary" class="q-mt-sm" v-model="register.password" :type="isPwd ? 'password' : 'text'" label="Password" :rules="[val => !!val || 'Field is required', val => val.length > 6 || 'Please use miniun 6 character']" ref="fldPasswordChange">
+                      <template v-slot:append>
+                      <q-icon name="visibility"   @click="isPwd = !isPwd"/>
+                      </template>
+                  </q-input>
+                  <q-input color="primary" class=" q-mb-xl" v-model="register.password2" :type="isPwd2 ? 'password' : 'text'" label="Confirm Password" :rules="ConfirmPWD">
+                      <template v-slot:append>
+                      <q-icon name="visibility"   @click="isPwd2 = !isPwd2"/>
+                      </template>
+                  </q-input>
+              </div>
+            </q-card-section>
+          </q-card>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="superponer_boton">
-    <div class="row justify-center">
-      <div class="col q-mx-xl">
-        <q-btn 
-        to="/home"
-        size="lg"
-        color="info"
-        label="Sign Up"
-        rounded
-        no-caps
-        class="full-width"
-        />
+    <div class="superponer_boton">
+      <div class="row justify-center">
+        <div class="col q-mx-xl">
+          <q-btn 
+          type="submit"
+          size="lg"
+          color="info"
+          label="Sign Up"
+          rounded
+          no-caps
+          class="full-width"
+          />
+        </div>
+      </div>
+      <div class="row justify-center q-mt-sm">
+        <div class="col q-mx-xl">
+          <q-btn 
+          to="/home"
+          size="lg"
+          color="blue"
+          label="Facebook"
+          rounded
+          no-caps
+          class="full-width"
+          />
+        </div>
+      </div>
+      <div class="row justify-center q-mt-sm">
+        <div class="col q-mx-xl">
+          <q-btn
+          to="/home" 
+          size="lg"
+          color="red"
+          label="Google"
+          rounded
+          no-caps
+          class="full-width"
+          />
+        </div>
+      </div>
+      <div class="text-h11 q-mt-md text-center text-grey-6">
+          Already have an account? 
+          <q-item class="col text-weight-bolder text-grey-6" to="/login" style=display:inline;>Sign in</q-item>
       </div>
     </div>
-    <div class="row justify-center q-mt-sm">
-      <div class="col q-mx-xl">
-        <q-btn 
-        to="/home"
-        size="lg"
-        color="blue"
-        label="Facebook"
-        rounded
-        no-caps
-        class="full-width"
-        />
-      </div>
-    </div>
-    <div class="row justify-center q-mt-sm">
-      <div class="col q-mx-xl">
-        <q-btn
-        to="/home" 
-        size="lg"
-        color="red"
-        label="Google"
-        rounded
-        no-caps
-        class="full-width"
-        />
-      </div>
-    </div>
-    <div class="text-h11 q-mt-md text-center text-grey-6">
-        Already have an account? 
-        <q-item class="col text-weight-bolder text-grey-6" to="/login" style=display:inline;>Sign in</q-item>
-    </div>
-  </div>
+  </q-form>
   
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: 'PageIndex',
   data(){
     return{
       text:"",
-      register:{name:"",email:"",password:"",password2:""}
+      register:{name:"",email:"",password:"",password2:""},
+      isPwd: true,
+      isPwd2: true,
     }
   },
   methods: {
-    register(){
+    registro(){
       console.log("registrado")
       axios.post('/register', 
         this.register
@@ -121,7 +125,20 @@ export default {
       .catch(function (error) {
         console.log(error);
       });
-  }}
+  }
+  },
+  computed: {
+    ConfirmPWD() {
+      return [
+          (v) => !!v || "Field is required",
+          
+          (v) => v == this.$refs.fldPasswordChange.value || "Mots de passe différents"
+        ]
+      },
+    Required() {
+      return [(v) => !!v || 'Field is required']
+    }
+  }
 }
 </script>
 <style scoped>
