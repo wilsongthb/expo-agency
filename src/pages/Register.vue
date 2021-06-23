@@ -116,10 +116,14 @@ export default {
   methods: {
     registro(){
       console.log("registrado")
-      axios.post('/register', 
-        this.register
+      axios.post('http://localhost:8000/api/auth/users/', 
+        {
+          ...this.register,
+          username: this.register.name
+        }
       )
       .then(function (response) {
+        /* aqui reutilizar el token */
         console.log(response);
       })
       .catch(function (error) {
