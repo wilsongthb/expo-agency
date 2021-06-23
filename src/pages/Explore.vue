@@ -23,8 +23,10 @@
 </template>
 
 <script>
+    import { SplitCarousel, SplitCarouselItem } from "vue-split-carousel";
 export default {
     name:"explore",
+    
 
 }
 </script>
