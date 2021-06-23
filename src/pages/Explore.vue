@@ -1,51 +1,288 @@
 <template>
-    <q-page >
-        <div class="column" style="height: 130px">
-            <q-banner class="col bg-info">
-               <div class="text-h6 text-weight-bolder text-center text-white">
-               
-               
-               </div>
-            </q-banner>
-         </div>
-         <div class="row">
-        <div class="scrollmenu col-12">
-            <q-card class="my-card" style="display: inline;">
-                <img src="https://cdn.quasar.dev/img/mountains.jpg" style="width: 60%;">
-                <div style="width: 60%;">
-                  <div  style="display: inline;">Our Changing Planet</div>
-                  <div  style="display: inline;">by John Doe</div>
+    <q-page>
+        <carousel :autoplay="true" :nav="false" :items="4" :margin="0.5">
+            <q-card class="my-card" flat bordered>
+            <q-img
+                src="https://cdn.quasar.dev/img/parallax2.jpg"
+            />
+
+            <q-card-section>
+                <div class="text-overline text-orange-9">Overline</div>
+                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
+                <div class="text-caption text-grey">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </div>
+            </q-card-section>
+
+            <q-card-actions>
+                <q-btn flat color="dark" label="Share" />
+                <q-btn flat color="primary" label="Book" />
+
+                <q-space />
+
+                <q-btn
+                color="grey"
+                round
+                flat
+                dense
+                :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded = !expanded"
+                />
+            </q-card-actions>
+
+            <q-slide-transition>
+                <div v-show="expanded">
+                <q-separator />
+                <q-card-section class="text-subitle2">
+                    {{ lorem }}
+                </q-card-section>
+                </div>
+            </q-slide-transition>
             </q-card>
-          </div>
-          </div>
+            <q-card class="my-card" flat bordered>
+            <q-img
+                src="https://cdn.quasar.dev/img/parallax2.jpg"
+            />
+
+            <q-card-section>
+                <div class="text-overline text-orange-9">Overline</div>
+                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
+                <div class="text-caption text-grey">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+            </q-card-section>
+
+            <q-card-actions>
+                <q-btn flat color="dark" label="Share" />
+                <q-btn flat color="primary" label="Book" />
+
+                <q-space />
+
+                <q-btn
+                color="grey"
+                round
+                flat
+                dense
+                :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded = !expanded"
+                />
+            </q-card-actions>
+
+            <q-slide-transition>
+                <div v-show="expanded">
+                <q-separator />
+                <q-card-section class="text-subitle2">
+                    {{ lorem }}
+                </q-card-section>
+                </div>
+            </q-slide-transition>
+            </q-card>
+            <q-card class="my-card" flat bordered>
+            <q-img
+                src="https://cdn.quasar.dev/img/parallax2.jpg"
+            />
+
+            <q-card-section>
+                <div class="text-overline text-orange-9">Overline</div>
+                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
+                <div class="text-caption text-grey">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+            </q-card-section>
+
+            <q-card-actions>
+                <q-btn flat color="dark" label="Share" />
+                <q-btn flat color="primary" label="Book" />
+
+                <q-space />
+
+                <q-btn
+                color="grey"
+                round
+                flat
+                dense
+                :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded = !expanded"
+                />
+            </q-card-actions>
+
+            <q-slide-transition>
+                <div v-show="expanded">
+                <q-separator />
+                <q-card-section class="text-subitle2">
+                    {{ lorem }}
+                </q-card-section>
+                </div>
+            </q-slide-transition>
+            </q-card>
+            <q-card class="my-card" flat bordered>
+            <q-img
+                src="https://cdn.quasar.dev/img/parallax2.jpg"
+            />
+
+            <q-card-section>
+                <div class="text-overline text-orange-9">Overline</div>
+                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
+                <div class="text-caption text-grey">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+            </q-card-section>
+
+            <q-card-actions>
+                <q-btn flat color="dark" label="Share" />
+                <q-btn flat color="primary" label="Book" />
+
+                <q-space />
+
+                <q-btn
+                color="grey"
+                round
+                flat
+                dense
+                :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded = !expanded"
+                />
+            </q-card-actions>
+
+            <q-slide-transition>
+                <div v-show="expanded">
+                <q-separator />
+                <q-card-section class="text-subitle2">
+                    {{ lorem }}
+                </q-card-section>
+                </div>
+            </q-slide-transition>
+            </q-card>
+            <q-card class="my-card" flat bordered>
+            <q-img
+                src="https://cdn.quasar.dev/img/parallax2.jpg"
+            />
+
+            <q-card-section>
+                <div class="text-overline text-orange-9">Overline</div>
+                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
+                <div class="text-caption text-grey">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+            </q-card-section>
+
+            <q-card-actions>
+                <q-btn flat color="dark" label="Share" />
+                <q-btn flat color="primary" label="Book" />
+
+                <q-space />
+
+                <q-btn
+                color="grey"
+                round
+                flat
+                dense
+                :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded = !expanded"
+                />
+            </q-card-actions>
+
+            <q-slide-transition>
+                <div v-show="expanded">
+                <q-separator />
+                <q-card-section class="text-subitle2">
+                    {{ lorem }}
+                </q-card-section>
+                </div>
+            </q-slide-transition>
+            </q-card>
+            <q-card class="my-card" flat bordered>
+            <q-img
+                src="https://cdn.quasar.dev/img/parallax2.jpg"
+            />
+
+            <q-card-section>
+                <div class="text-overline text-orange-9">Overline</div>
+                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
+                <div class="text-caption text-grey">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+            </q-card-section>
+
+            <q-card-actions>
+                <q-btn flat color="dark" label="Share" />
+                <q-btn flat color="primary" label="Book" />
+
+                <q-space />
+
+                <q-btn
+                color="grey"
+                round
+                flat
+                dense
+                :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded = !expanded"
+                />
+            </q-card-actions>
+
+            <q-slide-transition>
+                <div v-show="expanded">
+                <q-separator />
+                <q-card-section class="text-subitle2">
+                    {{ lorem }}
+                </q-card-section>
+                </div>
+            </q-slide-transition>
+            </q-card>
+            <q-card class="my-card" flat bordered>
+            <q-img
+                src="https://cdn.quasar.dev/img/parallax2.jpg"
+            />
+
+            <q-card-section>
+                <div class="text-overline text-orange-9">Overline</div>
+                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
+                <div class="text-caption text-grey">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </div>
+            </q-card-section>
+
+            <q-card-actions>
+                <q-btn flat color="dark" label="Share" />
+                <q-btn flat color="primary" label="Book" />
+
+                <q-space />
+
+                <q-btn
+                color="grey"
+                round
+                flat
+                dense
+                :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded = !expanded"
+                />
+            </q-card-actions>
+
+            <q-slide-transition>
+                <div v-show="expanded">
+                <q-separator />
+                <q-card-section class="text-subitle2">
+                    {{ lorem }}
+                </q-card-section>
+                </div>
+            </q-slide-transition>
+            </q-card>
+        </carousel>
     </q-page>
 </template>
-
 <script>
-    import { SplitCarousel, SplitCarouselItem } from "vue-split-carousel";
+
+import carousel from 'vue-owl-carousel'
+
 export default {
-    name:"explore",
+    components: { carousel },
+    data(){
+        return{
+            expanded: false,
+            lorem: 'Lorem ',
+        }
+    }    
     
-
 }
+
 </script>
-<style scoped>
-    div.scrollmenu {
-        background-color: #333;
-        overflow: auto;
-        white-space: nowrap;
-    }
-
-    div.scrollmenu a {
-        display: inline-block;
-        color: white;
-        text-align: center;
-        padding: 14px;
-        text-decoration: none;
-    }
-
-    div.scrollmenu a:hover {
-        background-color: #777;
-    }
-</style>
