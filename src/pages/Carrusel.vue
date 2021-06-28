@@ -12,51 +12,20 @@
       height="500px"
       class="q-mt-md text-primary rounded-borders"
     >
-      <q-carousel-slide name="style" class="column no-wrap flex-center">
+      <q-carousel-slide v-for="(item,index) in carrusel" :key="index" :name="item.name" class="column no-wrap flex-center">
         <img
             alt="Quasar logo"
-            src="~assets/1.png"
+            :src="'/img/'+item.img+ '.png'"
+            
             style="width: 200px; height: 200px"
         >
-        <div class="q-mt-sm text-weight-bolder text-black">Primer Titulo</div>
+        <div class="q-mt-sm text-weight-bolder text-black">{{item.titulo}}</div>
         <div class="q-mt-md text-center text-black">
-          {{ lorem }}
+          {{ item.descripcion }}
         </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="tv" class="column no-wrap flex-center">
-        <img
-            alt="Quasar logo"
-            src="~assets/2.png"
-            style="width: 200px; height: 200px"
-        >
-        <div class="q-mt-sm text-weight-bolder text-black">Segundo Titulo</div>
-        <div class="q-mt-md text-center text-black">
-          {{ lorem }}
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="layers" class="column no-wrap flex-center">
-        <img
-            alt="Quasar logo"
-            src="~assets/3.png"
-            style="width: 200px; height: 200px"
-        >
-        <div class="q-mt-sm text-weight-bolder text-black">Tercero Titulo</div>
-        <div class="q-mt-md text-center text-black">
-          {{ lorem }}
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide name="map" class="column no-wrap flex-center">
-        
-        <img
-            alt="Quasar logo"
-            src="~assets/4.png"
-            style="width: 200px; height: 200px"
-        >
-        <div class="q-mt-sm text-weight-bolder text-black">Cuarto Titulo</div>
-        <div class="q-mt-md text-center text-black">
-          {{ lorem }}
-        </div>
-        <q-btn color="secondary" class=" q-mt-md full-width" label="Go!" to="/home"/>
+        <template v-if="item.button">
+          <q-btn color="secondary" class=" q-mt-md full-width" label="Go!" to="/home"/>
+        </template>
       </q-carousel-slide>
     </q-carousel>
   </div>
@@ -73,9 +42,16 @@ export default {
         { value: 'outline', label: 'outline' },
         { value: 'push', label: 'push' }
       ],
-
+      lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.',
+      carrusel:[
+        {titulo:"Primer Titulo",name:"style", img:"1", descripcion:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo."},
+        {titulo:"Segundo Titulo",name:"tv", img:"2", descripcion:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo."},
+        {titulo:"Tercero Titulo",name:"layers", img:"3", descripcion:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo."},
+        {titulo:"Cuarto Titulo",name:"map",img:"4", descripcion:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.",
+        button:true}
+      ],
       slide: 'style',
-      lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.'
+      
     }
   }
 }

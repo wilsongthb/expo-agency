@@ -8,7 +8,7 @@ class TravelServices {
       imageSrc: "https://picsum.photos/300/180",
       description: `In this special tour to sillustani we´ll pick you up at 9.00 a.m. from the hotel and then we go by car to the chullpas of sillustani, this archaeological site is located on the peninsula of umayo lagoon and it’s one the most important necropolis in the world.
 
-There will visit the famous archaeological complex of Sillustani, cylinder burial towers built of stone, (12m/40ft tall) where the Aymaras buried their important leaders. sorounded by the Umayo Lagoon, only adds beauty to the place, the Chullpas known as lagarto and Intiwatana are most prominent. Here you will have the opportunity to observe the wild guinea pigs, birds and other wildlife of the area. This trip takes (3h and 30 minutes maximum), after back to Puno and transfer to your hotel.`,
+      There will visit the famous archaeological complex of Sillustani, cylinder burial towers built of stone, (12m/40ft tall) where the Aymaras buried their important leaders. sorounded by the Umayo Lagoon, only adds beauty to the place, the Chullpas known as lagarto and Intiwatana are most prominent. Here you will have the opportunity to observe the wild guinea pigs, birds and other wildlife of the area. This trip takes (3h and 30 minutes maximum), after back to Puno and transfer to your hotel.`,
       includes: [
         "Advice one day before the tour.",
         "Sillustani entrence fee.",

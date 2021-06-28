@@ -19,7 +19,7 @@
         <q-tabs
           v-model="tab"
           dense
-          class="text-black"
+          class="text-white"
           active-bg-color="info"
           indicator-color="primary"
           active-text-color="white"
@@ -27,20 +27,25 @@
           narrow-indicator
         >
           <q-tab name="round" label="Round"/>
-          <q-tab name="one_way" label="One Way" />
-          <q-tab name="multi" label="Multi" />
+          <!--q-tab name="one_way" label="One Way" />
+          <q-tab name="multi" label="Multi" /-->
         </q-tabs>
 
         <q-separator />
 
         <q-tab-panels v-model="tab" animated>
           <q-tab-panel name="round">
-            <div class="text-h6">Round</div>
+            <div class="text-h6">name tour</div>
             <div class="row ">
               <div class="col q-mr-sm">
-                <q-input color="primary" v-model="text" label="From" size="10px" font-size="10px">
+                <q-input color="primary" v-model="text" label="Firts Name" size="10px" font-size="10px">
                   <template v-slot:prepend>
-                    <q-icon name="place" />
+                    <q-icon name="person" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Email">
+                  <template v-slot:prepend>
+                    <q-icon name="email" />
                   </template>
                 </q-input>
                 <q-input color="primary" v-model="text" label="Departure date">
@@ -50,17 +55,22 @@
                 </q-input>
                 <q-input color="primary" v-model="text" label="Number of passenger">
                   <template v-slot:prepend>
-                    <q-icon name="person" />
+                    <q-icon name="people" />
                   </template>
                 </q-input>
               </div>
               <div class="col q-ml-sm">
-                <q-input color="primary" v-model="text" label="To">
+                <q-input color="primary" v-model="text" label="Last Name">
+                  <template v-slot:prepend>
+                    <q-icon name="person" />
+                  </template>
+                </q-input>
+                <q-input color="primary" v-model="text" label="Pais">
                   <template v-slot:prepend>
                     <q-icon name="place" />
                   </template>
                 </q-input>
-                <q-input color="primary" v-model="text" label="Return date">
+                <q-input color="primary" v-model="text" label="Arrive date">
                   <template v-slot:prepend>
                     <q-icon name="event" />
                   </template>
@@ -75,7 +85,7 @@
             
           </q-tab-panel>
 
-          <q-tab-panel name="one_way">
+          <!--q-tab-panel name="one_way">
             <div class="text-h6">One way</div>
             <div class="row ">
               <div class="col q-mr-sm">
@@ -154,7 +164,7 @@
                 </q-input>
               </div>
             </div>
-          </q-tab-panel>
+          </q-tab-panel-->
         </q-tab-panels>
       </q-card>
     </div>
