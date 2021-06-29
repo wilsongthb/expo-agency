@@ -15,7 +15,7 @@
       <q-carousel-slide v-for="(item,index) in carrusel" :key="index" :name="item.name" class="column no-wrap flex-center">
         <img
             alt="Quasar logo"
-            :src="'/img/'+item.img+ '.png'"
+            :src="'/statics/'+item.img+ '.png'"
             
             style="width: 200px; height: 200px"
         >
