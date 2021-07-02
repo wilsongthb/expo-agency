@@ -19,17 +19,16 @@
         style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd"
       >
         <q-list padding>
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
+          <q-item clickable v-ripple to="/result">
+            <q-item-section avatar >
               <q-icon name="inbox" />
             </q-item-section>
-
-            <q-item-section>
-              Inbox
+            <q-item-section >
+              mis reservas
             </q-item-section>
           </q-item>
 
-          <q-item active clickable v-ripple>
+          <!-- <q-item active clickable v-ripple>
             <q-item-section avatar>
               <q-icon name="star" />
             </q-item-section>
@@ -47,15 +46,25 @@
             <q-item-section>
               Send
             </q-item-section>
-          </q-item>
+          </q-item> -->
 
           <q-item clickable v-ripple>
             <q-item-section avatar>
-              <q-icon name="drafts" />
+              <q-icon name="account_circle" />
             </q-item-section>
 
             <q-item-section>
-              Drafts
+              logout
+            </q-item-section>
+          </q-item>
+          <q-separator color="info" inset class="q-mb-sm"/>
+          <q-item clickable v-ripple to="/nosotros">
+            <q-item-section avatar>
+              <q-icon name="apartment" />
+            </q-item-section>
+
+            <q-item-section>
+              Nosotros
             </q-item-section>
           </q-item>
         </q-list>
