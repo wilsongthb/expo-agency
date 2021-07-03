@@ -1,19 +1,79 @@
 <template>
-  <q-page class="col">
-    
-    
+  <q-page class="q-pa-md">
+    <div class="row">
+      <h6 class="q-ma-none">Nosotros</h6>
+    </div>
+    <q-card class="my-card q-mt-none q-mx-sm">
+      <q-card-section >
+        <q-scroll-area :visible="true" style="height: 200px;">
+          <div class="q-py-xs">
+            Sol Peru Reisen les da la bienvenida.<br>
+            Somos una agencia de viajes ubicada en la ciudad de Puno.<br>
+            Después de muchos años de experiencia en la actividad del Turismo y motivados por brindar un servicio diferente:<br>
+            Promovemos un turismo creativo.
+            <q-list bordered separator >
+              <q-item>
+                <q-item-section avatar>
+                  <q-icon color="primary" name="check" />
+                </q-item-section>
+                <q-item-section>Tratamos de  preservar la naturaleza a través de nuestros viajes.</q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section avatar>
+                  <q-icon color="primary" name="check" />
+                </q-item-section>
+                <q-item-section>Visitamos  escuelas de niños y con pequeñas actividades queremos generar el entusiasmo, unión, creatividad para valorar y proteger la naturaleza.</q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section avatar>
+                  <q-icon color="primary" name="check" />
+                </q-item-section>
+                <q-item-section>Somos flexibles a otras ideas útiles que puedan ayudar a la niñez.</q-item-section>
+              </q-item>
+              <q-item>
+                <q-item-section avatar>
+                  <q-icon color="primary" name="check" />
+                </q-item-section>
+                <q-item-section>Si usted no le agrada el turismo en masas, y busca algo especial, auténtico, entonces esta en la empresa adecuada.</q-item-section>
+              </q-item>
+            </q-list>
+            <div>Tenemos diferentes programas cuidadosamente diseñados para cada interés y podemos organizar además otro tipo de tours como:</div>
+            <q-list bordered separator >
+              <q-item>
+                <q-item-section avatar>
+                  <q-icon color="primary" name="check" />
+                </q-item-section>
+                <q-item-section>Clásicos. Caminatas. Kayak, tour espirituales y otros.</q-item-section>
+              </q-item>
+            </q-list>
+            Permítanos brindarle días agradables e inolvidables.<br>
+            Viajando nos ayudaras a preservar la naturaleza.
+          </div>
+        </q-scroll-area>
+      </q-card-section>
+    </q-card>
+    <q-separator color="orange" inset class="q-my-sm"/>
+
+    <div class="row">
+      <h6 class="q-ma-none">Ubicanos</h6>
+    </div>
     <div id="mapa">
       <gmap-map
         class="q-ma-sm"
         :center="center"
         :zoom="zoom"
-        style="width: 96%; height: 350px; border-radius:5px;">
+        style=" height: 250px; border-radius:5px;">
         <gmap-marker v-for="(marker) in markers"
           :key="marker.key"
           :position="marker"
         >
         </gmap-marker>
       </gmap-map>
+    </div>
+    <q-separator color="orange" inset class="q-my-sm"/>
+
+    <div class="row">
+      <h6 class="q-ma-none">Contactanos</h6>
     </div>
     <q-card class="my-card q-ma-sm">
       <q-parallax
@@ -91,6 +151,11 @@ export default {
 
 <style>
   #mapa{
-    border-radius:50% ;
+    border: #ccc 3px solid ;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 10px;
   }
 </style>

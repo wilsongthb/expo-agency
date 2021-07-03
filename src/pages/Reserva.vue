@@ -51,12 +51,12 @@
                       <q-icon name="email" />
                     </template>
                   </q-input>
-                  <q-input v-model="reserva.ida"  type="date" label="reserva" required>
+                  <q-input v-model="reserva.ida"  type="date" label="reserva" stack-label required>
                     <template v-slot:prepend>
                       <q-icon name="event" />
                     </template>
                   </q-input>
-                  <q-input color="primary" v-model="reserva.numeroPasajeros"  type="number" label="Number of passenger" required>
+                  <q-input color="primary" v-model="reserva.numeroPasajeros"  type="number" label="Number of passenger"  required>
                     <template v-slot:prepend>
                       <q-icon name="people" />
                     </template>
@@ -74,13 +74,13 @@
                       <q-icon name="place" />
                     </template>
                   </q-select>
-                  <q-input v-model="reserva.vuelta"  :mask="date" type="date"  label="regreso" required>
+                  <q-input v-model="reserva.vuelta"  :mask="date" type="date"  label="regreso" stack-label required>
                     <template v-slot:prepend>
                       <q-icon name="event" />
                     </template>
                   </q-input>
                  
-                  <q-select v-model="reserva.tipo" :options="clases" label="Flight class" :rules="[myRule]" required>
+                  <q-select v-model="reserva.tipo" :options="clases" label="Class" :rules="[myRule]" required>
                     <template v-slot:prepend>
                       <q-icon name="flight_class" />
                     </template>
