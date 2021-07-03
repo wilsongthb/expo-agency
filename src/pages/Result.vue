@@ -16,26 +16,30 @@
       <div class="col">
         <q-card class="my-card q-mt-sm" v-for="item in 3" :key="item">
           <q-card-section>
-            <div class="row q-mb-md">
+            <div class="row q-mb-md items-center">
               <q-icon color="primary" name="place" />
               <div class="col">Puno, Puno</div>
               <q-icon color="primary" name="event" />
               <div class="col">08/12/12</div>
+              <q-icon color="primary" name="schedule" />
+              <div class="col">07:00</div>
+            </div>
+            <div class="row items-center">
               <q-icon color="primary" name="person" />
               <div class="col">1 Passenger</div>
-            </div>
-            <div class="row">
               <q-icon color="primary" name="flight_class" />
               <div class="col">First class</div>
               <q-icon color="primary" name="airplane_ticket" />
               <div class="col">S/.300.00</div>
-              <div class="col">
+            </div>
+            <div class="row q-mt-sm">
+              <div class="col q-mx-md">
                 <div class="text-center">
                   <q-btn class="items-center full-width" label="Edit" color="info" rounded no-caps/>
                   </div>
                   
                 </div>
-              <div class="col">
+              <div class="col q-mx-md">
                 <div class="text-center">
                   <q-btn class="items-center full-width" label="Eliminar" color="red" rounded no-caps/>
                   </div>
@@ -49,7 +53,7 @@
 
    
     <div class="row">
-      <carousel :dots="false" :nav="false" :items="1" :margin="5" :autoplay="true" class="q-mb-md " style="display: inline-flex;">
+      <carousel :dots="false" :nav="false" :items="1" :margin="5" :autoplay="true" class="col-12 q-mb-md ">
      
           <q-card v-for="item in 10" :key="item" class="my-card" flat bordered >       
             <q-card-section horizontal>
