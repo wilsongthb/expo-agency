@@ -1,6 +1,6 @@
 " ~/dev/external/japura_works/expo-agency/.session.vim:
 " Vim session script.
-" Created by session.vim 2.13.1 on 22 June 2021 at 19:44:43.
+" Created by session.vim 2.13.1 on 03 July 2021 at 19:43:06.
 " Open this file in Vim and run :source % to restore your session.
 
 if exists('g:syntax_on') != 1 | syntax on | endif
@@ -26,13 +26,13 @@ set shortmess=aoO
 argglobal
 %argdel
 $argadd package
-edit src/pages/Register.vue
+edit src/pages/Reserva.vue
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
 wincmd _ | wincmd |
-split
-1wincmd k
+vsplit
+1wincmd h
 wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
@@ -43,8 +43,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '1resize ' . ((&lines * 25 + 28) / 56)
-exe '2resize ' . ((&lines * 26 + 28) / 56)
+exe 'vert 1resize ' . ((&columns * 58 + 50) / 100)
+exe 'vert 2resize ' . ((&columns * 41 + 50) / 100)
 argglobal
 balt src/layouts/MainLayout.vue
 setlocal fdm=manual
@@ -57,17 +57,17 @@ setlocal fdn=20
 setlocal nofen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 126 - ((10 * winheight(0) + 12) / 25)
+let s:l = 307 - ((16 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 126
-normal! $
+keepjumps 307
+normal! 038|
 lcd ~/dev/external/japura_works/expo-agency
 wincmd w
 argglobal
-if bufexists("~/dev/external/japura_works/expo-agency/src/AuthService.js") | buffer ~/dev/external/japura_works/expo-agency/src/AuthService.js | else | edit ~/dev/external/japura_works/expo-agency/src/AuthService.js | endif
-balt ~/dev/external/japura_works/expo-agency/src/pages/Register.vue
+if bufexists("~/dev/external/japura_works/expo-agency/src/pages/Reserva.vue") | buffer ~/dev/external/japura_works/expo-agency/src/pages/Reserva.vue | else | edit ~/dev/external/japura_works/expo-agency/src/pages/Reserva.vue | endif
+balt ~/dev/external/japura_works/expo-agency/src/layouts/MainLayout.vue
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -78,31 +78,38 @@ setlocal fdn=20
 setlocal nofen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 13) / 26)
+let s:l = 247 - ((14 * winheight(0) + 13) / 26)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 035|
+keepjumps 247
+normal! 07|
 lcd ~/dev/external/japura_works/expo-agency
 wincmd w
-exe '1resize ' . ((&lines * 25 + 28) / 56)
-exe '2resize ' . ((&lines * 26 + 28) / 56)
+exe 'vert 1resize ' . ((&columns * 58 + 50) / 100)
+exe 'vert 2resize ' . ((&columns * 41 + 50) / 100)
 tabnext 1
-badd +74 ~/dev/external/japura_works/expo-agency/src/layouts/MainLayout.vue
-badd +0 ~/dev/external/japura_works/expo-agency/package
+badd +269 ~/dev/external/japura_works/expo-agency/src/pages/Reserva.vue
+badd +1 ~/dev/external/japura_works/expo-agency/package
+badd +11 ~/dev/external/japura_works/expo-agency/src/App.vue
+badd +157 ~/dev/external/japura_works/expo-agency/src/pages/Register.vue
+badd +92 ~/dev/external/japura_works/expo-agency/src/BackendService.js
+badd +143 ~/dev/external/japura_works/expo-agency/src/layouts/MainLayout.vue
+badd +1 ~/dev/external/japura_works/expo-agency/src/AuthService.js
 badd +29 ~/dev/external/japura_works/expo-agency/src/travels/IndexPage.vue
-badd +44 ~/dev/external/japura_works/expo-agency/src/travels/ShowPage.vue
-badd +17 ~/dev/external/japura_works/expo-agency/src/travels/TravelServices.js
-badd +1 ~/dev/external/japura_works/expo-agency/src/travels/TravelCard.vue
+badd +90 ~/dev/external/japura_works/expo-agency/src/travels/ShowPage.vue
+badd +106 ~/dev/external/japura_works/expo-agency/src/travels/TravelServices.js
+badd +9 ~/dev/external/japura_works/expo-agency/src/travels/TravelCard.vue
 badd +10 ~/dev/external/japura_works/expo-agency/package.json
-badd +7 ~/dev/external/japura_works/expo-agency/src/router/index.js
-badd +18 ~/dev/external/japura_works/expo-agency/src/router/routes.js
-badd +2 ~/dev/external/japura_works/expo-agency/src/App.vue
-badd +120 ~/dev/external/japura_works/expo-agency/src/pages/Login.vue
-badd +34 ~/dev/external/japura_works/expo-agency/src/store/index.js
-badd +126 ~/dev/external/japura_works/expo-agency/src/pages/Register.vue
-badd +0 ~/dev/external/japura_works/expo-agency/src/AuthService.js
+badd +30 ~/dev/external/japura_works/expo-agency/src/router/index.js
+badd +48 ~/dev/external/japura_works/expo-agency/src/router/routes.js
+badd +107 ~/dev/external/japura_works/expo-agency/src/pages/Login.vue
+badd +45 ~/dev/external/japura_works/expo-agency/src/store/index.js
+badd +1 ~/dev/external/japura_works/expo-agency/src
+badd +13 ~/dev/external/japura_works/expo-agency/src/http.js
+badd +50 ~/dev/external/japura_works/expo-agency/quasar.conf.js
+badd +0 ~/dev/external/japura_works/expo-agency/src/pages/worlCountries.js
+badd +4 ~/dev/external/japura_works/expo-agency/src/pages/afterLogin.js
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
 "   silent exe 'bwipe ' . s:wipebuf
 endif

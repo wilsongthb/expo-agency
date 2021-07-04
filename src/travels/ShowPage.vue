@@ -6,6 +6,10 @@
     <div class="col-11">
       <TravelCard :travel="travel"></TravelCard>
     </div>
+    <div class="col-11" style="margin-top: 0.5rem; margin-bottom: 0.5rem">
+      <!-- <q-btn round color="primary" icon="share" /> -->
+      <q-btn color="secondary" label="Reservar" @click="goToReserve" />
+    </div>
     <div class="col-11">
       <q-card>
         <q-card-section>
@@ -21,11 +25,28 @@
         row-key="name"
       />
     </div>
+    <div class="col-11">
+      <q-card>
+        <q-card-section>
+          <div class="text-subtitle2">SERVICIOS</div>
+          {{ travel.service }}
+        </q-card-section>
+      </q-card>
+    </div>
+    <div class="col-11">
+      <q-card>
+        <q-card-section>
+          <div class="text-subtitle2">INFORMACION UTIL</div>
+          {{ travel.advice }}
+        </q-card-section>
+      </q-card>
+    </div>
   </div>
 </template>
 <script>
+import BackendService from "src/BackendService";
 import TravelCard from "./TravelCard.vue";
-import TravelServices from "./TravelServices";
+// import TravelServices from "./TravelServices";
 export default {
   components: {
     TravelCard,
@@ -55,13 +76,23 @@ export default {
   // watch: {},
 
   mounted() {
-    TravelServices.getTravel(this.id).then((res) => {
+    // TravelServices.getTravel(this.id).then((res) => {
+    //   this.travel = res;
+    // });
+    BackendService.getProduct(this.id).then((res) => {
       this.travel = res;
     });
   },
 
   methods: {
-    //
+    goToReserve() {
+      this.$router.push({
+        path: "/reserva",
+        query: {
+          product_id: this.id
+        }
+      });
+    },
   },
 };
 </script>

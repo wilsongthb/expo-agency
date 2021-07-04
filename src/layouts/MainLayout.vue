@@ -20,10 +20,10 @@
       >
         <q-list padding>
           <q-item clickable v-ripple to="/result">
-            <q-item-section avatar >
+            <q-item-section avatar>
               <q-icon name="inbox" />
             </q-item-section>
-            <q-item-section >
+            <q-item-section>
               mis reservas
             </q-item-section>
           </q-item>
@@ -48,16 +48,23 @@
             </q-item-section>
           </q-item> -->
 
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple @click="logout" v-show="user.id">
             <q-item-section avatar>
               <q-icon name="account_circle" />
             </q-item-section>
-
             <q-item-section>
               logout
             </q-item-section>
           </q-item>
-          <q-separator color="info" inset class="q-mb-sm"/>
+          <q-item clickable v-ripple to="login" v-show="!user.id">
+            <q-item-section avatar>
+              <q-icon name="account_circle" />
+            </q-item-section>
+            <q-item-section>
+              login
+            </q-item-section>
+          </q-item>
+          <q-separator color="info" inset class="q-mb-sm" />
           <q-item clickable v-ripple to="/nosotros">
             <q-item-section avatar>
               <q-icon name="apartment" />
@@ -109,6 +116,7 @@
 
 <script>
 import EssentialLink from "components/EssentialLink.vue";
+import BackendService from "src/BackendService";
 
 const linksData = [];
 
@@ -132,6 +140,11 @@ export default {
         { icon: "account_box", text: "Profile", url: "/auth" },
       ],
     };
+  },
+  methods: {
+    logout() {
+      BackendService.logout();
+    },
   },
 };
 </script>

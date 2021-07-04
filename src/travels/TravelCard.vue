@@ -3,7 +3,7 @@
 <!-- Created at: 2021-06-05 14:23 -->
 <template>
   <q-card class="my-card">
-    <q-img :src="travel.imageSrc" />
+    <q-img :src="travel.image" />
 
     <q-card-section>
       <div class="text-subtitle2">{{ travel.name }}</div>

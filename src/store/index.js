@@ -1,3 +1,4 @@
+import BackendService from "src/BackendService";
 import Vue from "vue";
 import Vuex from "vuex";
 
@@ -38,6 +39,12 @@ export default function(/* { ssrContext } */) {
     // for dev mode only
     strict: process.env.DEBUGGING,
   });
+
+  if (localStorage.getItem("token")) {
+    BackendService.getCurrentUser().then((user) => {
+      Store.commit("setUser", user);
+    });
+  }
 
   return Store;
 }

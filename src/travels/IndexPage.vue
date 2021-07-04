@@ -36,7 +36,8 @@
 </template>
 <script>
 import TravelCard from "./TravelCard.vue";
-import TravelServices from "./TravelServices.js";
+// import TravelServices from "./TravelServices.js";
+import BackendService from "../BackendService.js"
 export default {
   components: {
     TravelCard,
@@ -70,9 +71,12 @@ export default {
   // watch: {},
 
   mounted() {
-    TravelServices.getTravels().then((res) => {
-      this.list = res;
-    });
+    BackendService.getProducts().then(res => {
+      this.list = res.results;
+    })
+    // TravelServices.getTravels().then((res) => {
+    //   this.list = res;
+    // });
   },
 
   methods: {

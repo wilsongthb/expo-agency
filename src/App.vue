@@ -5,6 +5,9 @@
 </template>
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  mounted() {
+    console.log(process.env.API);
+  }
 }
 </script>

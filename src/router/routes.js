@@ -1,13 +1,16 @@
-
 const routes = [
   {
-    path: '/home',
-    component: () => import('layouts/MainLayout.vue'),
+    path: "/home",
+    component: () => import("layouts/MainLayout.vue"),
     children: [
       { path: "", component: () => import("pages/Explore.vue") },
       { path: "/nosotros", component: () => import("pages/Nosotros.vue") },
       { path: "/planes", component: () => import("pages/Planes.vue") },
-      { path: "/reserva", component: () => import("pages/Reserva.vue") },
+      {
+        path: "/reserva",
+        component: () => import("src/pages/Reserva3.vue"),
+        meta: { requiresAuth: true },
+      },
       { path: "/result", component: () => import("pages/Result.vue") },
       { path: "/tours", component: () => import("pages/Tours.vue") },
       {
@@ -17,33 +20,34 @@ const routes = [
       {
         path: "/travels/:id",
         component: () => import("src/travels/ShowPage.vue"),
-        props: true
-      }
+        props: true,
+      },
     ],
   },
 
   // Always leave this as last one,
   // but you can also remove it
   {
-    path: '*',
-    component: () => import('pages/Error404.vue')
+    path: "*",
+    component: () => import("pages/Error404.vue"),
   },
   {
-    path: '/',
-    component: () => import('pages/Carrusel.vue')
+    path: "/",
+    component: () => import("pages/Carrusel.vue"),
   },
   {
-    path: '/auth',
-    component: () => import('pages/Auth.vue'),
+    path: "/auth",
+    component: () => import("pages/Auth.vue"),
   },
   {
-    path: '/register',
-    component: () => import('pages/Register.vue'),
+    path: "/register",
+    component: () => import("pages/Register.vue"),
   },
   {
-    path: '/login',
-    component: () => import('pages/Login.vue'),
-  }
-]
+    path: "/login",
+    name: "login",
+    component: () => import("pages/Login.vue"),
+  },
+];
 
-export default routes
+export default routes;

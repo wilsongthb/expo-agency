@@ -89,7 +89,8 @@
 </template>
 
 <script>
-import axios from "axios";
+import BackendService from "src/BackendService";
+import afterLogin from "./afterLogin.js";
 export default {
   name: "PageIndex",
   data() {
@@ -100,31 +101,13 @@ export default {
     };
   },
   methods: {
-    auth() {
-      console.log("hola");
-      axios
-        .post("http://localhost:8000/api/auth/token/login", {
-          ...this.login,
-          username: this.login.email,
-        })
-        .then((response) => {
-          localStorage.setItem("token", response.data.auth_token);
-
-          axios
-            .get("http://localhost:8000/api/auth/users/me/", {
-              headers: {
-                Authorization: `Token ` + localStorage.getItem("token"),
-              },
-            })
-            .then((userResponse) => {
-              this.$store.commit("setUser", userResponse.data);
-            });
-
-          this.$router.push("/home");
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
+    async auth() {
+      try {
+        await BackendService.login(this.login.email, this.login.password);
+        afterLogin(this);
+      } catch (e) {
+        //
+      }
     },
   },
 };
