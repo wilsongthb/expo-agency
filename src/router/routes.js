@@ -8,7 +8,7 @@ const routes = [
       { path: "/planes", component: () => import("pages/Planes.vue") },
       {
         path: "/reserva",
-        component: () => import("src/pages/Reserva3.vue"),
+        component: () => import("src/pages/Reserva.vue"),
         meta: { requiresAuth: true },
       },
       { path: "/result", component: () => import("pages/Result.vue") },
