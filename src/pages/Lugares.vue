@@ -1,5 +1,5 @@
 <template>
-   <q-page>
+   <q-page >
       <div class="column" style="height: 130px">
          <q-banner class="col bg-info">
             <div class="text-h6 text-weight-bolder text-center text-white">
@@ -24,38 +24,93 @@
          </q-input>
       </div> 
 
-      <div class="q-pa-md" v-for="item in filtro" :key="item.id">
+      <!--div class="q-pa-md" v-for="item in list" :key="item.id">
          <q-parallax :height="200" :speed="0.5">
             <template v-slot:media>
-            <img :src="item.img">
+            <img :src="item.image">
             </template>
 
-            <h4 class="text-white">{{item.title}}</h4>
+            <h7 class="text-white ellipsis">{{item.name}}</h7>
          </q-parallax>
-      </div> 
+      </div-->
+      <div class="q-ma-sm">
+         <q-card class="my-card q-mb-md" v-for="item in list" :key="item.id">
+            <q-img :src="item.image"  style="height:200px"/>
+
+            <q-card-section>
+            <q-btn
+               fab
+               color="primary"
+               icon="place"
+               class="absolute"
+               style="top: 0; right: 12px; transform: translateY(-50%);"
+            />
+
+            <div class="row no-wrap items-center">
+               <div class="col text-h6 ellipsis">
+                  {{item.name}}
+               </div>
+               <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
+                  <q-icon name="place" />
+                  250 ft
+               </div>
+            </div>
+
+            <q-rating v-model="stars" :max="5" size="32px" />
+            </q-card-section>
+
+            <q-card-section class="q-pt-none">
+            <div class="text-subtitle1">
+               $・{{item.price}}
+            </div>
+            <q-scroll-area :visible="true" style="height: 80px;">
+               <div class="text-caption text-grey">
+                  {{item.description}}
+               </div>
+            </q-scroll-area>
+            </q-card-section>
+         
+            <q-separator />
+
+            <q-card-actions>
+            <q-btn flat round icon="event" />
+            <q-btn flat color="primary">
+               Reserve
+            </q-btn>
+            </q-card-actions>
+         </q-card> 
+      </div>
+      
      
          
    </q-page>
 </template>
 <script>
+import BackendService from "../BackendService.js"
 export default {
-   mounted(){},
+   mounted(){
+      BackendService.getProducts().then(res => {
+      this.list = res.results;
+      })
+   },
     data(){
     return{
       text:"",
+      stars: 4,
       tours:[
-         {id:"1",title:"Taquile",img:"https://www.punotours.org/wp-content/uploads/puno12.png" , to:"/1"},
-         {id:"2",title:"Uros",img:"https://www.peru.travel/Contenido/Destino/Imagen/pe/37/1.2/Principal/Los%20Uros.jpg",to:"/2"},
-         {id:"3",title:"Sillustani",img:"https://portal.andina.pe/EDPfotografia3/Thumbnail/2020/10/13/000717789W.jpg", to:"/3"},
-         {id:"4",title:"Puno",img:"https://www.viajaraperu.com/wp-content/uploads/2011/12/mirador-Kuntur-Wasi-puno-760x500.jpg", to:"/4"},
-         {id:"5",title:"Amantani",img:"https://www.punotours.org/wp-content/uploads/lago-titicaca.jpg", to:"/5"},
-         {id:"6",title:"bahia",img:"https://www.punotours.org/wp-content/uploads/lago-titicaca2.jpg",to:"/6"},
-      ]
+         {id:"1",name:"Taquile",image:"https://www.punotours.org/wp-content/uploads/puno12.png" , to:"/1"},
+         {id:"2",name:"Uros",image:"https://www.peru.travel/Contenido/Destino/Imagen/pe/37/1.2/Principal/Los%20Uros.jpg",to:"/2"},
+         {id:"3",name:"Sillustani",image:"https://portal.andina.pe/EDPfotografia3/Thumbnail/2020/10/13/000717789W.jpg", to:"/3"},
+         {id:"4",name:"Puno",image:"https://www.viajaraperu.com/wp-content/uploads/2011/12/mirador-Kuntur-Wasi-puno-760x500.jpg", to:"/4"},
+         {id:"5",name:"Amantani",image:"https://www.punotours.org/wp-content/uploads/lago-titicaca.jpg", to:"/5"},
+         {id:"6",name:"bahia",image:"https://www.punotours.org/wp-content/uploads/lago-titicaca2.jpg",to:"/6"},
+      ],
+      list: [],
     }
   },
   computed:{
      filtro(){
-        return this.tours.filter((items)=> items.title.toUpperCase().includes(this.text.toUpperCase()));
+        return this.list.filter((items)=> items.name.toUpperCase().includes(this.text.toUpperCase()));
      }
   }
 }
