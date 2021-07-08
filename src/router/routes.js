@@ -3,7 +3,7 @@ const routes = [
     path: "/home",
     component: () => import("layouts/MainLayout.vue"),
     children: [
-      { path: "", component: () => import("pages/Explore.vue") },
+      { path: "", component: () => import("src/pages/Home.vue") },
       { path: "/nosotros", component: () => import("pages/Nosotros.vue") },
       { path: "/planes", component: () => import("pages/Planes.vue") },
       {
@@ -12,7 +12,7 @@ const routes = [
         meta: { requiresAuth: true },
       },
       { path: "/result", component: () => import("pages/Result.vue") },
-      { path: "/tours", component: () => import("pages/Tours.vue") },
+      { path: "/tours", component: () => import("src/pages/Tours.vue") },
       {
         path: "/travels",
         component: () => import("src/travels/IndexPage.vue"),

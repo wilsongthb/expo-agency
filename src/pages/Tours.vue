@@ -1,67 +1,94 @@
 <template>
-   <q-page>
-      <div class="column" style="height: 130px">
-         <q-banner class="col bg-info">
-            <div class="text-h6 text-weight-bolder text-center text-white">
-            
-            
+    <q-page>
+        <div class="column" style="height: 30px">
+            <q-banner class="col bg-info">
+                <div class="text-h6 text-weight-bolder text-center text-white">
+                    
+                </div>
+            </q-banner>
+        </div>
+    <div class="row">
+        <div class="col q-pa-md">
+            <div class="row">
+                <h6 class="q-ma-none">Tours visitados recientemente</h6>
             </div>
-         </q-banner>
-      </div>
-      <div class="superponer">
-         <q-input outlined v-model="text"  label-slot clearable class="q-mx-md bg-white" color="info">
-            <template v-slot:prepend>
-               <q-avatar>
-                  <q-icon name="search" size="md" color="info"/>
-               </q-avatar>
-            </template>
+            <carousel :dots="false" :nav="false" :items="3" :margin="5" class="q-mb-md" :autoplay="true">
+                <q-card v-for="item in 10" :key="item" class="my-card" flat bordered>
+                    <q-img
+                        src="https://cdn.quasar.dev/img/parallax2.jpg"
+                    />
+                    <q-card-section class="q-pa-xs">
+                        <div class="text-weight-bold">Our Changing Planet</div>
+                        <q-rating size="18px" v-model="stars" :max="5" color="primary" />
+                    </q-card-section>
+                </q-card>
+            </carousel>
+            <q-separator color="orange" inset class="q-mb-sm"/>
 
-            <template v-slot:label>
-               <strong class="text-deep-orange"> Are you</strong>
-               search <em class="q-px-sm bg-deep-orange text-white rounded-borders">cities</em>?
-            </template>
-
-         </q-input>
-      </div> 
-
-      <div class="q-pa-md" v-for="item in filtro" :key="item.id">
-         <q-parallax :height="200" :speed="0.5">
-            <template v-slot:media>
-            <img :src="item.img">
-            </template>
-
-            <h4 class="text-white">{{item.title}}</h4>
-         </q-parallax>
-      </div> 
-     
-         
-   </q-page>
+            <div class="row">
+                <h6 class="q-ma-none">Tours clásicos</h6>
+            </div>
+            <div class="row">
+                <carousel :dots="false" :nav="false" :items="1" :margin="5" class="q-mb-md q-px-md col-12" style="display: inline-flex;">
+                    <template slot="next"><q-icon name="arrow_forward_ios"></q-icon></template>
+                    <template slot="prev"><q-icon name="arrow_back_ios"></q-icon></template>
+                    <q-card v-for="item in 10" :key="item" class="my-card" flat bordered >       
+                        <q-img
+                            src="https://www.punotours.org/wp-content/uploads/puno12.png"
+                            style="height: 200px;"
+                        >
+                            <div class="absolute-bottom text-subtitle1 text-center">
+                            titulo
+                            </div>
+                        </q-img>
+                        <q-card-section class="q-pa-xs">
+                            <div class="text-weight-bold">Our Changing Planet</div>
+                            <q-rating size="18px" v-model="stars" :max="5" color="primary" />
+                        </q-card-section>
+                    </q-card>
+                </carousel>
+            </div>
+            <q-separator color="orange" inset class="q-mb-sm" style="display: block;"/>
+            
+            <div class="row">
+                <h6 class="q-ma-none">Tours especiales</h6>
+            </div>
+            <div class="row">
+                <carousel :dots="false" :nav="false" :items="1" :margin="5" class="q-mb-md q-px-md col-12" style="display: inline-flex;">
+                    <template slot="next"><q-icon name="arrow_forward_ios" ></q-icon></template>
+                    <template slot="prev"><q-icon name="arrow_back_ios" ></q-icon></template>
+                    <q-card v-for="item in 10" :key="item" class="my-card" flat bordered >       
+                        <q-img
+                            src="https://www.punotours.org/wp-content/uploads/puno12.png"
+                            style="height: 200px;"
+                        >
+                            <div class="absolute-bottom text-subtitle1 text-center">
+                            titulo
+                            </div>
+                        </q-img>
+                        <q-card-section class="q-pa-xs">
+                            <div class="text-weight-bold">Our Changing Planet</div>
+                            <q-rating size="18px" v-model="stars" :max="5" color="primary" />
+                        </q-card-section>
+                    </q-card>
+                </carousel>
+            </div>
+            <q-separator color="orange" inset class="q-mb-sm" style="display: block;"/>
+        </div>
+    </div>
+    </q-page>
 </template>
 <script>
+import carousel from 'vue-owl-carousel'
 export default {
+    components: { carousel },
     data(){
-    return{
-      text:"",
-      tours:[
-         {id:"1",title:"Taquile",img:"https://www.punotours.org/wp-content/uploads/puno12.png" , to:"/1"},
-         {id:"2",title:"Uros",img:"https://www.peru.travel/Contenido/Destino/Imagen/pe/37/1.2/Principal/Los%20Uros.jpg",to:"/2"},
-         {id:"3",title:"Sillustani",img:"https://portal.andina.pe/EDPfotografia3/Thumbnail/2020/10/13/000717789W.jpg", to:"/3"},
-         {id:"4",title:"Puno",img:"https://www.viajaraperu.com/wp-content/uploads/2011/12/mirador-Kuntur-Wasi-puno-760x500.jpg", to:"/4"},
-         {id:"5",title:"Amantani",img:"https://www.punotours.org/wp-content/uploads/lago-titicaca.jpg", to:"/5"},
-         {id:"6",title:"bahia",img:"https://www.punotours.org/wp-content/uploads/lago-titicaca2.jpg",to:"/6"},
-      ]
-    }
-  },
-  computed:{
-     filtro(){
-        return this.tours.filter((items)=> items.title.toUpperCase().includes(this.text.toUpperCase()));
-     }
-  }
+        return{
+            expanded: false,
+            lorem: 'Lorem ',
+            stars: 3
+        }
+    }    
+    
 }
 </script>
-<style scoped>
-.superponer{
-    position: relative;
-    top: -30px;
-  }
-</style>
