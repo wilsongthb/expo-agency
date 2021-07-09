@@ -31,10 +31,13 @@ const routes = [
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
-  {
-    path: "/",
-    component: () => import("pages/Carrusel.vue"),
-  },
+  // {
+  //   path: "/",
+  //   component: () => import("pages/Carrusel.vue"),
+    
+  // },
+  { path: "/"
+  , component: () => import("pages/InicioCarousel.vue") },
   {
     path: "/auth",
     component: () => import("pages/Auth.vue"),
