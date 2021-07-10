@@ -24,15 +24,29 @@
          </q-input>
       </div> 
 
-      <!--div class="q-pa-md" v-for="item in list" :key="item.id">
+      <router-link class="col-12 col-md-6 col-sm-6"
+        :to="`/travels/${l.id}`"
+        v-for="(l, i) in filtro"
+        :key="i"
+        :travel="l"
+        style="text-decoration:none"
+      >
+        <essential-link
+          class="q-mx-lg q-mb-lg"
+          :travel="l"
+          :list="list"
+        ></essential-link>
+      </router-link>
+
+      <!--div class="q-pa-md" v-for="item in tours" :key="item.id">
          <q-parallax :height="200" :speed="0.5">
             <template v-slot:media>
             <img :src="item.image">
             </template>
 
-            <h7 class="text-white ellipsis">{{item.name}}</h7>
+            <h4 class="text-white ellipsis">{{item.name}}</h4>
          </q-parallax>
-      </div-->
+      </div>
       <div class="q-ma-sm">
          <q-card class="my-card q-mb-md" v-for="item in list" :key="item.id">
             <q-img :src="item.image"  style="height:200px"/>
@@ -79,7 +93,7 @@
             </q-btn>
             </q-card-actions>
          </q-card> 
-      </div>
+      </div-->
       
      
          
@@ -87,7 +101,12 @@
 </template>
 <script>
 import BackendService from "../BackendService.js"
+//import EssentialLink from "components/EssentialLink.vue";
 export default {
+   components:{
+      'essential-link':require('components/EssentialLink.vue').default
+     // EssentialLink,
+   },
    mounted(){
       BackendService.getProducts().then(res => {
       this.list = res.results;
