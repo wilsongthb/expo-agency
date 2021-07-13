@@ -7,6 +7,7 @@ const routes = [
       { path: "/lugares", component: () => import("src/pages/Lugares.vue") },
       { path: "/nosotros", component: () => import("pages/Nosotros.vue") },
       { path: "/planes", component: () => import("pages/Planes.vue") },
+      { path: "/destinos", component: () => import("pages/Destinos.vue") },
       {
         path: "/reserva",
         component: () => import("src/pages/Reserva.vue"),
@@ -16,10 +17,12 @@ const routes = [
       { path: "/tours", component: () => import("src/pages/Tours.vue") },
       {
         path: "/travels",
-        component: () => import("src/travels/IndexPage.vue"),
+        //component: () => import("src/travels/IndexPage.vue"),
+        component: () => import("src/pages/Lugares.vue"),
       },
       {
         path: "/travels/:id",
+        //component: () => import("src/travels/ShowPage.vue"),
         component: () => import("src/travels/ShowPage.vue"),
         props: true,
       },
@@ -32,13 +35,10 @@ const routes = [
     path: "*",
     component: () => import("pages/Error404.vue"),
   },
-  // {
-  //   path: "/",
-  //   component: () => import("pages/Carrusel.vue"),
-    
-  // },
-  { path: "/"
-  , component: () => import("pages/InicioCarousel.vue") },
+  {
+    path: "/",
+    component: () => import("pages/InicioCarousel.vue"),
+  },
   {
     path: "/auth",
     component: () => import("pages/Auth.vue"),

@@ -35,8 +35,51 @@
           class="q-mx-lg q-mb-lg"
           :travel="l"
           :list="i"
+           @modal="handleClick"
         ></essential-link>
       </router-link>
+
+
+      
+      <q-dialog v-model="confirm" >
+         <q-card class="my-card">
+         <q-bar class="bg-primary">
+            
+            <div class="text-white">9:34</div>
+
+            <q-space />
+
+            <q-btn class="text-white" dense flat icon="close" v-close-popup>
+               <q-tooltip>Close</q-tooltip>
+            </q-btn>
+         </q-bar>
+         <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
+
+         <q-card-section>
+            <q-list>
+               <q-item clickable v-ripple v-for="item in 4" :key="item">
+                  
+
+               
+
+                  <q-item-section>
+                
+                  <q-item-label caption>
+                     Se recoge a los visitantes en el hotel en el centro de Puno.
+                  </q-item-label>
+                  </q-item-section>
+
+                  <q-item-section  top>
+                     14:00pm
+                  </q-item-section>
+               </q-item>
+            
+            </q-list>
+         </q-card-section>
+
+         </q-card>
+      </q-dialog>
+
 
       <!--div class="q-pa-md" v-for="item in tours" :key="item.id">
          <q-parallax :height="200" :speed="0.5">
@@ -115,6 +158,7 @@ export default {
     data(){
     return{
       text:"",
+      confirm: false,
       stars: 4,
       tours:[
          {id:"1",name:"Taquile",image:"https://www.punotours.org/wp-content/uploads/puno12.png" , to:"/1"},
@@ -125,12 +169,21 @@ export default {
          {id:"6",name:"bahia",image:"https://www.punotours.org/wp-content/uploads/lago-titicaca2.jpg",to:"/6"},
       ],
       list: [],
+
+      
+
     }
   },
   computed:{
      filtro(){
         return this.list.filter((items)=> items.name.toUpperCase().includes(this.text.toUpperCase()));
      }
+  },
+  methods:{
+     handleClick(info) {
+      //alert(info)
+      this.confirm = info
+    }
   }
 }
 </script>

@@ -1,15 +1,16 @@
 <template>
    <div class="q-ma-sm">
-         <q-card class="my-card q-mb-md" >
+      <q-card class="my-card q-mb-md" >
             <q-img :src="travel.image"  style="height:200px"/>
 
             <q-card-section>
             <q-btn
                fab
                color="primary"
-               icon="place"
+               icon="pending_actions"
                class="absolute"
                style="top: 0; right: 12px; transform: translateY(-50%);"
+               @click="enviar"
             />
 
             <div class="row no-wrap items-center">
@@ -17,8 +18,8 @@
                   {{travel.name}}
                </div>
                <div class="col-auto text-grey text-caption q-pt-md row no-wrap items-center">
-                  <q-icon name="place" />
-                  250 ft
+                  <q-icon name="pending_actions" />
+                  actividad
                </div>
             </div>
 
@@ -62,6 +63,13 @@ export default {
     return{
       stars: 4,
     }
+  },
+  methods:{
+     enviar(e){
+        //alert('antes')
+        e.preventDefault();
+        this.$emit("modal", true);
+     }
   }
 }
 </script>
