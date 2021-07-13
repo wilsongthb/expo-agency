@@ -34,7 +34,7 @@
         <essential-link
           class="q-mx-lg q-mb-lg"
           :travel="l"
-          :list="list"
+          :list="i"
         ></essential-link>
       </router-link>
 
