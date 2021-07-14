@@ -1,6 +1,7 @@
 <!-- Author: Wilson Pilco Nunez -->
 <!-- Email: wilsonaux1@gmail.com -->
 <!-- Created at: 2021-06-07 21:20 -->
+
 <template>
   <div class="q-pa-md row justify-center">
     <div class="col-11">

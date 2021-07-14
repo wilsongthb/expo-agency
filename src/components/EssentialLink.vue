@@ -40,7 +40,7 @@
             <q-separator />
 
             <q-card-actions>
-            <q-btn flat round icon="event" />
+          
             <q-btn flat round to="home" color="primary">
                Reserve
             </q-btn>

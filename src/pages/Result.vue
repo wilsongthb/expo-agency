@@ -4,7 +4,7 @@
     <q-banner class="col bg-info">
       <div class="text-h6 text-weight-bolder text-center text-white">
         <div class="q-mb-sm">
-          Result flight
+          Result flight (Reserve)
         </div>
         
       </div>

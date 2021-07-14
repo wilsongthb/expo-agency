@@ -22,8 +22,8 @@ const routes = [
       },
       {
         path: "/travels/:id",
+        component: () => import("src/pages/Destinos.vue"),
         //component: () => import("src/travels/ShowPage.vue"),
-        component: () => import("src/travels/ShowPage.vue"),
         props: true,
       },
     ],
