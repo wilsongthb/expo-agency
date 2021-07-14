@@ -59,19 +59,15 @@
             <q-list>
                <q-item clickable v-ripple v-for="item in 4" :key="item">
                   
+               <q-item-section>
+                  <q-item-label>Actividad</q-item-label>
+                  <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+               </q-item-section>
 
-               
-
-                  <q-item-section>
-                
-                  <q-item-label caption>
-                     Se recoge a los visitantes en el hotel en el centro de Puno.
-                  </q-item-label>
-                  </q-item-section>
-
-                  <q-item-section  top>
-                     14:00pm
-                  </q-item-section>
+               <q-item-section side top>
+                  <q-item-label caption>5 min ago</q-item-label>
+                  <q-icon name="watch_later" color="secondary" />
+               </q-item-section>
                </q-item>
             
             </q-list>
