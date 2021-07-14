@@ -41,18 +41,18 @@
 
 
       
-      <q-dialog v-model="confirm" >
-         <q-card class="my-card">
-         <q-bar class="bg-primary">
-            
-            <div class="text-white">9:34</div>
-
-            <q-space />
-
-            <q-btn class="text-white" dense flat icon="close" v-close-popup>
-               <q-tooltip>Close</q-tooltip>
-            </q-btn>
-         </q-bar>
+      <q-dialog v-model="confirm">
+         
+         <q-card class="my-card q-ma-none">
+            <q-bar class="bg-primary full-width">
+               <div class="text-white" >Actividades</div>
+   
+               <q-space />
+   
+               <q-btn class="text-white" dense flat icon="close" v-close-popup>
+                  <q-tooltip>Close</q-tooltip>
+               </q-btn>
+            </q-bar>
          <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
 
          <q-card-section>
