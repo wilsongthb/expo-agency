@@ -9,8 +9,11 @@
             src="~assets/logo.png"
             style="width: 200px;"
           />
+          
         </q-toolbar-title>
+        
         <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+        
       </q-toolbar>
     </q-header>
 
@@ -23,6 +26,7 @@
             <q-item-section avatar>
               <q-icon name="inbox" />
             </q-item-section>
+            
             <q-item-section>
               mis reservas
             </q-item-section>
@@ -93,6 +97,7 @@
     </q-drawer>
 
     <q-page-container class="bg-grey-2">
+      <div id="idioma"></div>
       <router-view />
     </q-page-container>
 
@@ -115,6 +120,7 @@
 </template>
 
 <script>
+
 import EssentialLink from "components/EssentialLink.vue";
 import BackendService from "src/BackendService";
 
@@ -122,7 +128,7 @@ const linksData = [];
 
 export default {
   name: "MainLayout",
-  components: { EssentialLink },
+  components: { EssentialLink},
   computed: {
     user() {
       return this.$store.state.user;
