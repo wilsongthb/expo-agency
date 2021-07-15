@@ -13,6 +13,11 @@ const routes = [
         component: () => import("src/pages/Reserva.vue"),
         meta: { requiresAuth: true },
       },
+      {
+        path: "/reserves/:id",
+        component: () => import("../reserves/PageForm.vue"),
+        props: true
+      },
       { path: "/result", component: () => import("pages/Result.vue") },
       { path: "/tours", component: () => import("src/pages/Tours.vue") },
       {

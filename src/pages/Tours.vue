@@ -32,9 +32,9 @@
                 <carousel :dots="false" :nav="false" :items="1" :margin="5" class="q-mb-md q-px-md col-12" style="display: inline-flex;">
                     <template slot="next"><q-icon name="arrow_forward_ios"></q-icon></template>
                     <template slot="prev"><q-icon name="arrow_back_ios"></q-icon></template>
-                    <q-card v-for="item in 10" :key="item" class="my-card" flat bordered >       
+                    <q-card v-for="item in tours.filter(x => x.type == 2)" :key="item" class="my-card" flat bordered >       
                         <q-img
-                            src="https://www.punotours.org/wp-content/uploads/puno12.png"
+                            :src="item.image"
                             style="height: 200px;"
                         >
                             <div class="absolute-bottom text-subtitle1 text-center">
@@ -42,8 +42,8 @@
                             </div>
                         </q-img>
                         <q-card-section class="q-pa-xs">
-                            <div class="text-weight-bold">Our Changing Planet</div>
-                            <q-rating size="18px" v-model="stars" :max="5" color="primary" />
+                          <div class="text-weight-bold">{{item.name}}</div>
+                            <q-rating size="18px" v-model="item.rating" :max="5" color="primary" />
                         </q-card-section>
                     </q-card>
                 </carousel>
@@ -57,7 +57,7 @@
                 <carousel :dots="false" :nav="false" :items="1" :margin="5" class="q-mb-md q-px-md col-12" style="display: inline-flex;">
                     <template slot="next"><q-icon name="arrow_forward_ios" ></q-icon></template>
                     <template slot="prev"><q-icon name="arrow_back_ios" ></q-icon></template>
-                    <q-card v-for="item in 10" :key="item" class="my-card" flat bordered >       
+                    <q-card v-for="item in tours.filter(x => x.type == 3)" :key="item" class="my-card" flat bordered >       
                         <q-img
                             src="https://www.punotours.org/wp-content/uploads/puno12.png"
                             style="height: 200px;"
@@ -79,16 +79,30 @@
     </q-page>
 </template>
 <script>
+import BackendService from 'src/BackendService'
 import carousel from 'vue-owl-carousel'
 export default {
     components: { carousel },
     data(){
         return{
+          tours: [],
             expanded: false,
             lorem: 'Lorem ',
             stars: 3
         }
-    }    
+    }    ,
+  mounted() {
+    this.getTours();
+  },
+  methods: {
+    getTours() {
+      BackendService.getProducts({
+        //
+      }).then(res => {
+        this.tours = res.results.filter(x => [2, 3].includes(x.type))
+      });
+    }
+  }
     
 }
 </script>
