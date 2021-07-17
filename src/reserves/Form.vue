@@ -2,8 +2,8 @@
 <!-- Email: wilsonaux1@gmail.com -->
 <!-- Created at: 2021-07-14 20:58 -->
 <template>
-  <form @submit.prevent="save">
-    <p>{{ product }}</p>
+  <form @submit.prevent="save" class="q-ma-md">
+    <div class="text-h6">{{ product }}</div>
 
     <q-input
       v-model="request_message"
@@ -14,9 +14,9 @@
       label="Escribe tu mensaje aqui!"
     />
 
-    <q-input v-model="start_date" label="Reserva YYYY/MM/DD">
+    <q-input v-model="start_date" label="Reserva YYYY/MM/DD" class="q-mb-md">
       <template v-slot:prepend>
-        <q-icon name="event" class="cursor-pointer">
+        <q-icon color="primary" name="event" class="cursor-pointer">
           <q-popup-proxy
             ref="qDateProxy"
             transition-show="scale"
@@ -32,9 +32,9 @@
       </template>
     </q-input>
 
-    <q-input v-model="end_date" label="Retorno YYYY/MM/DD">
+    <q-input v-model="end_date" label="Retorno YYYY/MM/DD" class="q-mb-md">
       <template v-slot:prepend>
-        <q-icon name="event" class="cursor-pointer">
+        <q-icon color="primary" name="event" class="cursor-pointer">
           <q-popup-proxy
             ref="qDateProxy"
             transition-show="scale"
@@ -49,8 +49,10 @@
         </q-icon>
       </template>
     </q-input>
+    <div class="row justify-center">
 
-    <q-btn color="primary" label="Guardar" type="submit" />
+      <q-btn color="primary" label="Guardar" type="submit" />
+    </div>
   </form>
 </template>
 <script>

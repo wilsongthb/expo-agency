@@ -44,7 +44,7 @@
       <q-dialog v-model="confirm">
          
          <q-card class="my-card q-ma-none">
-            <q-bar class="bg-primary full-width">
+            <q-bar class="bg-primary full-width" style="position: sticky; top: 0px; z-index: 10;">
                <div class="text-white" >Actividades</div>
    
                <q-space />
@@ -57,7 +57,7 @@
 
          <q-card-section>
             <q-list>
-               <q-item clickable v-ripple v-for="item in 4" :key="item">
+               <q-item clickable v-ripple v-for="item in 15" :key="item">
                   
                <q-item-section>
                   <q-item-label>Actividad</q-item-label>
@@ -177,7 +177,7 @@ export default {
   },
   methods:{
      handleClick(info) {
-      //alert(info)
+      // alert(info)
       this.confirm = info
     }
   }
