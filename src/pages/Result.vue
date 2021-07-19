@@ -9,6 +9,7 @@
         </div>
       </q-banner>
     </div>
+    {{reserves}}
     <div class="superponer q-mx-sm">
       <div class="row q-mb-md">
         <div class="col">
@@ -168,6 +169,7 @@ export default {
         client_id: res.id,
       });
       this.reserves = response.results;
+      console.log(response.results)
     },
     async eliminarReserva(id) {
       if (window.confirm("Eliminar reserva?")) {
