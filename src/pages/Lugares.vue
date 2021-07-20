@@ -53,19 +53,20 @@
                   <q-tooltip>Close</q-tooltip>
                </q-btn>
             </q-bar>
-         <q-img src="https://cdn.quasar.dev/img/chicken-salad.jpg" />
+         <q-img :src="modalD.image"  style="height:150px"/>
 
          <q-card-section>
             <q-list>
-               <q-item clickable v-ripple v-for="item in 15" :key="item">
+               <q-item clickable v-ripple v-for="item in modalD.activities" :key="item">
                   
                <q-item-section>
                   <q-item-label>Actividad</q-item-label>
-                  <q-item-label caption lines="2">Secondary line text. Lorem ipsum dolor sit amet, consectetur adipiscit elit.</q-item-label>
+                  
+                  <q-item-label caption lines="2">{{item.activity}}</q-item-label>
                </q-item-section>
 
                <q-item-section side top>
-                  <q-item-label caption>5 min ago</q-item-label>
+                  <q-item-label caption>{{item.time}}</q-item-label>
                   <q-icon name="watch_later" color="secondary" />
                </q-item-section>
                </q-item>
@@ -165,7 +166,7 @@ export default {
          {id:"6",name:"bahia",image:"https://www.punotours.org/wp-content/uploads/lago-titicaca2.jpg",to:"/6"},
       ],
       list: [],
-
+      modalD:false
       
 
     }
@@ -177,8 +178,9 @@ export default {
   },
   methods:{
      handleClick(info) {
-      // alert(info)
-      this.confirm = info
+     console.log(info)
+      this.confirm = info.modal
+      this.modalD = info.datos
     }
   }
 }

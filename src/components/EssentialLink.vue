@@ -66,9 +66,12 @@ export default {
   },
   methods:{
      enviar(e){
-        //alert('antes')
+        //alert(e)
         e.preventDefault();
-        this.$emit("modal", true);
+        var datos = {
+           modal : true, datos: this.travel
+        }
+        this.$emit("modal", datos);
      }
   }
 }
