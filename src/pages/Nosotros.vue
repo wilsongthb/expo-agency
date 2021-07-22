@@ -76,9 +76,8 @@
       <h6 class="q-ma-none">Contactanos</h6>
     </div>
     <q-card class="my-card q-ma-sm">
-      <q-parallax
-        src="https://cdn.quasar.dev/img/parallax1.jpg"
-        :height="150"
+      <q-img
+        src="~assets/logo.png"
       />
 
       <q-card-section class="text-center">

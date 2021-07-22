@@ -51,93 +51,51 @@
         <q-tabs
           v-model="panel"
           dense
-          active-color="primary"
-          indicator-color="primary"
+          active-color="deep-orange"
+          indicator-color="deep-orange"
           align="justify"
           narrow-indicator
+          
         >
-          <q-tab name="mails">
-            <q-btn padding="sm md" color="orange-5" icon="eco"></q-btn
+        
+          <q-tab name="mails" >
+            <q-btn padding="sm md"  icon="schedule"></q-btn
           ></q-tab>
           <q-tab name="alarms"
-            ><q-btn round color="grey" glossy icon="local_grocery_store"></q-btn
+            ><q-btn padding="sm md"   icon="support_agent"  ></q-btn
           ></q-tab>
           <q-tab name="movies"
-            ><q-btn round color="grey" icon="my_location"></q-btn
+            ><q-btn padding="sm md"  icon="groups"></q-btn
           ></q-tab>
         </q-tabs>
 
         <q-tab-panels v-model="panel" animated class="shadow-2 rounded-borders">
-          <q-tab-panel name="mails">
+          <q-tab-panel name="alarms">
             <div class="text-h6">Servico</div>
             <q-separator color="orange" />
-            <q-scroll-area
-              :visible="true"
-              style="height: 100px;"
-              align="justify"
-            >
+         
+           
               <ul>
-                <li>
-                  Guía en el idioma requerido.
-                </li>
-                <li>
-                  Transporte en movilidad privada por la cantidad requerida de
-                  pasajeros
-                </li>
-                <li>
-                  Lancha de Punta Hermosa a Anapia, y retorno.
-                </li>
-                <li>
-                  Alimentación y hospedaje en las casas de familia de Anapia.
-                </li>
-                <li>
-                  Comida típica.
-                </li>
-                <li>
-                  Y botes veleros.
+                <li v-for="(service,index) in travel.services" :key="index">
+                  {{service}}
                 </li>
               </ul>
-            </q-scroll-area>
-          </q-tab-panel>
-
-          <q-tab-panel name="alarms">
-            <div class="text-h6">Información</div>
-            <q-separator color="orange" />
-            <q-scroll-area
-              :visible="true"
-              style="height: 100px;"
-              align="justify"
-            >
-              <ul>
-                <li>
-                  Las casas de los habitantes de Anapia son sencillas, y sin
-                  embargo, eso lo convierte en un lugar especial; una
-                  experiencia diferente. El alojamiento es en una habitación
-                  doble, sin baño privado, Las casas están siempre limpias y se
-                  proporcionarán frazadas suficientes. Tenga en cuenta que quizá
-                  algunos de ustedes estarán alojados en casas distantes unas de
-                  otras.
-                </li>
-                <li>
-                  Llevar zapatos cómodos para la caminata, Sombrero, lentes de
-                  sol, protector solar, ropa de abrigo el clima es muy cambiante
-                  en cualquier época del año.
-                </li>
-                <li>
-                  Si tuviera algún problema de Salud o cualquier otro detalle no
-                  dude en comunicarnos oportunamente que podemos ayudarlos
-                </li>
-                <li>
-                  Llevar linterna.
-                </li>
-              </ul>
-            </q-scroll-area>
+           
           </q-tab-panel>
 
           <q-tab-panel name="movies">
-            <div class="text-h6">otros</div>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <div class="text-h6">Información</div>
+            <q-separator color="orange" />
+            
+             <ul>
+                <li v-for="(service,index) in travel.advices" :key="index">
+                  {{service}}
+                </li>
+              </ul>
+            
           </q-tab-panel>
+
+        
         </q-tab-panels>
       </div>
     </div>

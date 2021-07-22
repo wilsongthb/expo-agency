@@ -22,10 +22,10 @@
         </template>
 
         <template v-slot:label>
-          <strong class="text-deep-orange"> Are you</strong>
-          search
+          <strong class="text-deep-orange">¿Que</strong>
+          destino 
           <em class="q-px-sm bg-deep-orange text-white rounded-borders"
-            >cities</em
+            >buscas</em
           >?
         </template>
       </q-input>
@@ -107,49 +107,50 @@ export default {
     return {
       text: null,
       stars: 4,
-      tours: [
-        {
-          id: "1",
-          name: "Taquile",
-          image: "https://www.punotours.org/wp-content/uploads/puno12.png",
-          to: "/1",
-        },
-        {
-          id: "2",
-          name: "Uros",
-          image:
-            "https://www.peru.travel/Contenido/Destino/Imagen/pe/37/1.2/Principal/Los%20Uros.jpg",
-          to: "/2",
-        },
-        {
-          id: "3",
-          name: "Sillustani",
-          image:
-            "https://portal.andina.pe/EDPfotografia3/Thumbnail/2020/10/13/000717789W.jpg",
-          to: "/3",
-        },
-        {
-          id: "4",
-          name: "Puno",
-          image:
-            "https://www.viajaraperu.com/wp-content/uploads/2011/12/mirador-Kuntur-Wasi-puno-760x500.jpg",
-          to: "/4",
-        },
-        {
-          id: "5",
-          name: "Amantani",
-          image:
-            "https://www.punotours.org/wp-content/uploads/lago-titicaca.jpg",
-          to: "/5",
-        },
-        {
-          id: "6",
-          name: "bahia",
-          image:
-            "https://www.punotours.org/wp-content/uploads/lago-titicaca2.jpg",
-          to: "/6",
-        },
-      ],
+      // tours: [
+      //   {
+      //     id: "1",
+      //     name: "Taquile",
+      //     image: "https://www.punotours.org/wp-content/uploads/puno12.png",
+      //     to: "/1",
+      //   },
+      //   {
+      //     id: "2",
+      //     name: "Uros",
+      //     image:
+      //       "https://www.peru.travel/Contenido/Destino/Imagen/pe/37/1.2/Principal/Los%20Uros.jpg",
+      //     to: "/2",
+      //   },
+      //   {
+      //     id: "3",
+      //     name: "Sillustani",
+      //     image:
+      //       "https://portal.andina.pe/EDPfotografia3/Thumbnail/2020/10/13/000717789W.jpg",
+      //     to: "/3",
+      //   },
+      //   {
+      //     id: "4",
+      //     name: "Puno",
+      //     image:
+      //       "https://www.viajaraperu.com/wp-content/uploads/2011/12/mirador-Kuntur-Wasi-puno-760x500.jpg",
+      //     to: "/4",
+      //   },
+      //   {
+      //     id: "5",
+      //     name: "Amantani",
+      //     image:
+      //       "https://www.punotours.org/wp-content/uploads/lago-titicaca.jpg",
+      //     to: "/5",
+      //   },
+      //   {
+      //     id: "6",
+      //     name: "bahia",
+      //     image:
+      //       "https://www.punotours.org/wp-content/uploads/lago-titicaca2.jpg",
+      //     to: "/6",
+      //   },
+      // ],
+      tours:[],
       list: [],
     };
   },

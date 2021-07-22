@@ -27,7 +27,7 @@
               align="justify"
               narrow-indicator
             >
-              <q-tab name="round" label="Round" />
+              <q-tab name="round" label="Reservar" />
               <!--q-tab name="one_way" label="One Way" />
             <q-tab name="multi" label="Multi" /-->
             </q-tabs>
@@ -43,7 +43,7 @@
                     <q-input
                       color="primary"
                       v-model="reserva.firstName"
-                      label="Firts Name"
+                      label="Nombres"
                       size="10px"
                       font-size="10px"
                       required
@@ -56,7 +56,7 @@
                       color="primary"
                       v-model="reserva.email"
                       type="email"
-                      label="Email"
+                      label="E-mail"
                       required
                     >
                       <template v-slot:prepend>
@@ -104,7 +104,7 @@
                       color="primary"
                       v-model="reserva.numeroPasajeros"
                       type="number"
-                      label="Number of passenger"
+                      label="Numero de Pasajeros"
                       required
                     >
                       <template v-slot:prepend>
@@ -116,7 +116,7 @@
                     <q-input
                       color="primary"
                       v-model="reserva.lastName"
-                      label="Last Name"
+                      label="Apellidos"
                       required
                     >
                       <template v-slot:prepend>
@@ -176,7 +176,7 @@
                     <q-select
                       v-model="reserva.tipo"
                       :options="clases"
-                      label="Flight class"
+                      label="Clase"
                       :rules="[myRule]"
                       required
                     >
@@ -206,7 +206,7 @@
       <q-expansion-item
         expand-separator
         icon="info"
-        label="More details"
+        label="Terminos y Condiciones"
         header-class="text-primary"
       >
         <q-card>
@@ -223,7 +223,7 @@
           size="lg"
           type="submit"
           color="info"
-          label="Reserve Now"
+          label="Reservar Ahora"
           rounded
           no-caps
           class="q-px-xl"

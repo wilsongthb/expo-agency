@@ -17,8 +17,8 @@
             </template>
 
             <template v-slot:label>
-               <strong class="text-deep-orange"> Are you</strong>
-               search <em class="q-px-sm bg-deep-orange text-white rounded-borders">cities</em>?
+               <strong class="text-deep-orange"> Busca</strong>
+               tu  <em class="q-px-sm bg-deep-orange text-white rounded-borders">Destino</em>
             </template>
 
          </q-input>
