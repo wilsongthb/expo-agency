@@ -2,9 +2,9 @@
   <q-page class="q-ma-md">
     <div class="row justify-center">
       <div class="col-8">
-        <q-scroll-area :visible="true" style="height: 50px;">
-          <div class="text-h5 text-uppercase row">{{ travel.name }}</div>
-        </q-scroll-area>
+        <!-- <q-scroll-area :visible="true" style="height: 50px;"></q-scroll-area> -->
+          <div class="text-h5 text-uppercase row" style="min-height: 80px;">{{ travel.name }}</div>
+        <!-- </q-scroll-area> -->
         <div class="text-h6 row">
           <q-icon name="edit_location" color="deep-orange"></q-icon>
           {{ travel.location }}

@@ -14,7 +14,7 @@
             </div>
             <template v-if="list.length">
                 <carousel :dots="false" :nav="false" :items="3" :margin="5" class="q-mb-md" :autoplay="true">
-                    <q-card v-for="item in ramdon" :key="item.id" class="my-card" flat bordered>
+                    <q-card v-for="item in random" :key="item.id" class="my-card" flat bordered>
                     <router-link class="col-12 col-md-6 col-sm-6" :to="`/travels/${item.id}`" style="text-decoration:none"> 
                         <q-img
                           :src="item.image"
@@ -132,7 +132,7 @@ export default {
 
     },
     computed:{
-        ramdon(){         
+        random(){         
             return this.list.sort(()=> Math.random()-0.5)
         }
     }

@@ -66,6 +66,9 @@
         </div>
       </div>
 
+      <q-separator color="deep-orange" class="q-mt-lg" ></q-separator>
+
+      <div class="text-h6">Lugares que te puede gustar</div>
       <div class="row">
         <carousel
           :dots="false"
@@ -75,40 +78,42 @@
           :autoplay="true"
           class="col-12 q-mb-md "
         >
-          <q-card v-for="item in 10" :key="item" class="my-card" flat bordered>
-            <q-card-section horizontal>
+          <q-card v-for="item in random" :key="item.id" class="my-card" flat bordered>
+            <q-card-section horizontal class="items-center">
               <q-img
                 class="col-5"
-                src="https://cdn.quasar.dev/img/parallax1.jpg"
+                :src="item.image"
+                height="20vh"
               />
               <q-card-section>
-                <div class="text-h6 q-mb-xs">Our Changing Planet</div>
+                <div class="text-h6 q-mb-xs">{{item.name}}</div>
                 <div class="row no-wrap items-center">
                   <q-rating
                     size="18px"
-                    v-model="stars"
+                    v-model="item.rating"
                     :max="5"
                     color="primary"
                   />
-                  <span class="text-caption text-grey q-ml-sm">4.2 (551)</span>
+                  <span class="text-caption text-grey q-ml-sm">{{item.rating}}</span>
                 </div>
-                <div class="row justify-end self-end">
-                  <h6 class="q-ma-sm q-pa-sm">S/. 300.00</h6>
-                </div>
+                
               </q-card-section>
             </q-card-section>
             <q-separator />
-            <q-card-actions>
-              <q-btn flat round icon="event" />
-              <q-btn flat>
+            <q-card-actions class="justify-between">
+              <!-- <q-btn >
                 5:30PM
               </q-btn>
-              <q-btn flat>
+              <q-btn >
                 7:00PM
+              </q-btn> -->
+              <q-btn flat color="primary" :to="`/travels/${item.id}`">
+                <q-icon name="event"></q-icon>
+                Reservar
               </q-btn>
-              <q-btn flat color="primary">
-                Reserve
-              </q-btn>
+              <div >
+                <h6 class="q-ma-sm q-pa-sm">S/. {{item.price}}</h6>
+              </div>
             </q-card-actions>
           </q-card>
         </carousel>
@@ -161,6 +166,11 @@ export default {
   },
   async mounted() {
     this.getReserves();
+    BackendService.getProducts({
+            //
+        }).then(res => {
+            this.list = res.results.filter(x => [2, 3].includes(x.type))
+    });
   },
   methods: {
     async getReserves() {
@@ -186,6 +196,11 @@ export default {
       this.$refs.elReserveForm.setValue(item);
     },
   },
+  computed:{
+        random(){         
+            return this.list.sort(()=> Math.random())
+        }
+    }
 };
 </script>
 <style scoped>

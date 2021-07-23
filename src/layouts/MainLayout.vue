@@ -11,8 +11,9 @@
           />
           
         </q-toolbar-title>
-        
-        <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+        <div id="idioma" v-show="gTrans"></div>
+        <q-btn flat @click="googleTranslateElementInit" :class="{'text-orange':gTrans}" round dense icon="translate" />
+        <q-btn flat @click="drawer = !drawer" :class="{'text-orange':drawer}" round dense icon="menu" />
         
       </q-toolbar>
     </q-header>
@@ -97,7 +98,6 @@
     </q-drawer>
 
     <q-page-container class="bg-grey-2">
-      <div id="idioma"></div>
       <router-view />
     </q-page-container>
 
@@ -118,7 +118,10 @@
     </q-footer>
   </q-layout>
 </template>
-
+<script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
 <script>
 
 import EssentialLink from "components/EssentialLink.vue";
@@ -138,6 +141,7 @@ export default {
     return {
       leftDrawerOpen: false,
       drawer: false,
+      gTrans: false,
       essentialLinks: linksData,
       links1: [
         { icon: "home", text: "Home", url: "/home" },
@@ -151,6 +155,27 @@ export default {
     logout() {
       BackendService.logout();
     },
+    googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: 'es',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          includedLanguages: 'de,en,es,fr,it,ru',
+          gaTrack: true,
+          gaId: 'UA-XXXXXXXX-X' },
+          'idioma'
+    )
+    this.gTrans=!this.gTrans;
+
+  }
   },
+
 };
 </script>
+<style>
+  body{
+    top: 0 !important;
+  }
+  .goog-te-banner-frame{
+    display: none;
+  }
+</style>
