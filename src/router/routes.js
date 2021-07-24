@@ -18,7 +18,7 @@ const routes = [
         component: () => import("../reserves/PageForm.vue"),
         props: true
       },
-      { path: "/result", component: () => import("pages/Result.vue") },
+      { path: "/result", component: () => import("pages/Result.vue"), meta: { requiresAuth: true }, },
       { path: "/tours", component: () => import("src/pages/Tours.vue") },
       {
         path: "/travels",

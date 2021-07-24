@@ -11,7 +11,7 @@
             />
           </div>
           <div class="text-h6 text-weight-bolder text-center text-white">
-            Sign Up!
+            Registrar!
           </div>
         </div>
       </q-banner>
@@ -28,7 +28,7 @@
                     class=""
                     v-model="register.name"
                     type="text"
-                    label="Full Name"
+                    label="Nombres y Apellidos"
                     required
                   >
                     <template v-slot:append>
@@ -52,7 +52,7 @@
                     class="q-mt-sm"
                     v-model="register.password"
                     :type="isPwd ? 'password' : 'text'"
-                    label="Password"
+                    label="Contraseña"
                     :rules="[
                       (val) => !!val || 'Field is required',
                       (val) =>
@@ -69,7 +69,7 @@
                     class=" q-mb-xl"
                     v-model="register.password2"
                     :type="isPwd2 ? 'password' : 'text'"
-                    label="Confirm Password"
+                    label="Confirmar Contraseña"
                     :rules="ConfirmPWD"
                   >
                     <template v-slot:append>

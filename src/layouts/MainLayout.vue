@@ -23,13 +23,13 @@
         style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd"
       >
         <q-list padding>
-          <q-item clickable v-ripple to="/result">
+          <q-item clickable v-ripple to="/result" v-if="user.id">
             <q-item-section avatar>
               <q-icon name="inbox" />
             </q-item-section>
             
-            <q-item-section>
-              mis reservas
+            <q-item-section >
+              mis reservas 
             </q-item-section>
           </q-item>
 

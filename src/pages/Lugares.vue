@@ -57,7 +57,7 @@
 
          <q-card-section>
             <q-list>
-               <q-item clickable v-ripple v-for="item in modalD.activities" :key="item">
+               <q-item clickable v-ripple v-for="(item,index) in modalD.activities" :key="index">
                   
                <q-item-section>
                   <q-item-label>Actividad</q-item-label>
@@ -178,7 +178,6 @@ export default {
   },
   methods:{
      handleClick(info) {
-     console.log(info)
       this.confirm = info.modal
       this.modalD = info.datos
     }

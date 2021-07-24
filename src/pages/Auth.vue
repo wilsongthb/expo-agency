@@ -7,8 +7,8 @@
         src="~assets/logo-vertical.png"
         style="width: 200px; height: 200px"
       >
-      <q-btn color="warning" rounded class="full-width q-mt-sm" label="Sign Up" to="/register"/>
-      <q-btn outline rounded color="yellow" size="md" class="full-width q-mt-md" label="Sign In" to="/login" />
+      <q-btn color="warning" rounded class="full-width q-mt-sm" label="Registrarse" to="/register"/>
+      <q-btn outline rounded color="yellow" size="md" class="full-width q-mt-md" label="Iniciar Sesion" to="/login" />
       </div>
       
     </div>

@@ -247,7 +247,7 @@ export default {
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.",
       tab: "round",
       options: worldCountries,
-      clases: ["clasica", "medium", "luxurios"],
+      clases: ["basica", "mediana", "alta"],
       text: "",
       reserva: {
         firstName: "",
@@ -307,7 +307,14 @@ export default {
           product_id: this.product.id,
           request_message: this.reserva.descripcion
         });
+
+        ///cambiar alert 1
         window.alert("reserva registrada");
+
+        this.$router.push({
+          path: "/result",
+        });
+
       } catch (e) {
         //
       }

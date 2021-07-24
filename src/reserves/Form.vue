@@ -13,6 +13,12 @@
       type="textarea"
       label="Escribe tu mensaje aqui!"
     />
+    <q-input v-model="companion" label="Pasajeros" class="q-mb-md">
+      <template v-slot:prepend>
+        <q-icon color="primary" name="person" class="cursor-pointer">
+        </q-icon>
+      </template>
+    </q-input>
 
     <q-input v-model="start_date" label="Reserva YYYY/MM/DD" class="q-mb-md">
       <template v-slot:prepend>
@@ -72,6 +78,7 @@ export default {
   data: () => ({
     id: null,
     product: null,
+    companion:null,
     start_date: null,
     end_date: null,
     price: null,
@@ -96,6 +103,7 @@ export default {
       this.id = item.id;
       this.product = item.product;
       this.start_date = item.start_date;
+      this.companion = item.companion;
       this.end_date = item.end_date;
       this.price = item.price;
       this.product_id = item.product_id;
@@ -109,6 +117,9 @@ export default {
     async save() {
       let result = await BackendService.saveReserve(this.$data);
       this.$emit("submitted", result);
+      this.$router.push({
+        path: "/result",
+      });
     },
   },
 };

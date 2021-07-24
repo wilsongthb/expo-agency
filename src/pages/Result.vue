@@ -70,53 +70,55 @@
 
       <div class="text-h6">Lugares que te puede gustar</div>
       <div class="row">
-        <carousel
-          :dots="false"
-          :nav="false"
-          :items="1"
-          :margin="5"
-          :autoplay="true"
-          class="col-12 q-mb-md "
-        >
-          <q-card v-for="item in random" :key="item.id" class="my-card" flat bordered>
-            <q-card-section horizontal class="items-center">
-              <q-img
-                class="col-5"
-                :src="item.image"
-                height="20vh"
-              />
-              <q-card-section>
-                <div class="text-h6 q-mb-xs">{{item.name}}</div>
-                <div class="row no-wrap items-center">
-                  <q-rating
-                    size="18px"
-                    v-model="item.rating"
-                    :max="5"
-                    color="primary"
-                  />
-                  <span class="text-caption text-grey q-ml-sm">{{item.rating}}</span>
-                </div>
-                
+        <template v-if="list.length">
+          <carousel
+            :dots="false"
+            :nav="false"
+            :items="1"
+            :margin="5"
+            :autoplay="true"
+            class="col-12 q-mb-md "
+          >
+            <q-card v-for="item in random" :key="item.id" class="my-card" flat bordered>
+              <q-card-section horizontal class="items-center">
+                <q-img
+                  class="col-5"
+                  :src="item.image"
+                  height="20vh"
+                />
+                <q-card-section>
+                  <div class="text-h6 q-mb-xs">{{item.name}}</div>
+                  <div class="row no-wrap items-center">
+                    <q-rating
+                      size="18px"
+                      v-model="item.rating"
+                      :max="5"
+                      color="primary"
+                    />
+                    <span class="text-caption text-grey q-ml-sm">{{item.rating}}</span>
+                  </div>
+                  
+                </q-card-section>
               </q-card-section>
-            </q-card-section>
-            <q-separator />
-            <q-card-actions class="justify-between">
-              <!-- <q-btn >
-                5:30PM
-              </q-btn>
-              <q-btn >
-                7:00PM
-              </q-btn> -->
-              <q-btn flat color="primary" :to="`/travels/${item.id}`">
-                <q-icon name="event"></q-icon>
-                Reservar
-              </q-btn>
-              <div >
-                <h6 class="q-ma-sm q-pa-sm">S/. {{item.price}}</h6>
-              </div>
-            </q-card-actions>
-          </q-card>
-        </carousel>
+              <q-separator />
+              <q-card-actions class="justify-between">
+                <!-- <q-btn >
+                  5:30PM
+                </q-btn>
+                <q-btn >
+                  7:00PM
+                </q-btn> -->
+                <q-btn flat color="primary" :to="`/travels/${item.id}`">
+                  <q-icon name="event"></q-icon>
+                  Reservar
+                </q-btn>
+                <div >
+                  <h6 class="q-ma-sm q-pa-sm">S/. {{item.price}}</h6>
+                </div>
+              </q-card-actions>
+            </q-card>
+          </carousel>
+        </template>
       </div>
     </div>
     <!-- <div class="row justify-center">
@@ -162,6 +164,7 @@ export default {
         "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.",
       stars: 4,
       reserves: [],
+      list:[]
     };
   },
   async mounted() {
@@ -182,6 +185,9 @@ export default {
       console.log(response.results)
     },
     async eliminarReserva(id) {
+
+      ///cambiar alert 2
+      
       if (window.confirm("Eliminar reserva?")) {
         await BackendService.deleteReserve(id);
         this.getReserves();
@@ -197,10 +203,10 @@ export default {
     },
   },
   computed:{
-        random(){         
-            return this.list.sort(()=> Math.random())
-        }
+    random(){         
+      return this.list.sort(()=> Math.random()-0.5)
     }
+  }
 };
 </script>
 <style scoped>

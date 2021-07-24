@@ -75,9 +75,10 @@
     <div class="row">
       <h6 class="q-ma-none">Contactanos</h6>
     </div>
-    <q-card class="my-card q-ma-sm">
+    <q-card class="my-card q-ma-sm q-pa-sm">
       <q-img
         src="~assets/logo.png"
+       
       />
 
       <q-card-section class="text-center">

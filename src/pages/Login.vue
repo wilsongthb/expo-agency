@@ -11,7 +11,7 @@
             />
           </div>
           <div class="text-h6 text-weight-bolder text-center text-white">
-            Sign In!
+            Iniciar sesión!
           </div>
         </div>
       </q-banner>
@@ -40,7 +40,7 @@
                     class="q-mt-sm q-mb-xl"
                     v-model="login.password"
                     :type="isPwd ? 'password' : 'text'"
-                    label="Password"
+                    label="Contraseña"
                     :rules="[
                       (val) => !!val || 'Field is required',
                       (val) =>
