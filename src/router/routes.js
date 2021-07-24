@@ -6,7 +6,7 @@ const routes = [
       { path: "", component: () => import("src/pages/Home.vue") },
       { path: "/lugares", component: () => import("src/pages/Lugares.vue") },
       { path: "/nosotros", component: () => import("pages/Nosotros.vue") },
-      { path: "/planes", component: () => import("pages/Planes.vue") },
+    // { path: "/planes", component: () => import("pages/Planes.vue") },
       { path: "/destinos", component: () => import("pages/Destinos.vue") },
       {
         path: "/reserva",
